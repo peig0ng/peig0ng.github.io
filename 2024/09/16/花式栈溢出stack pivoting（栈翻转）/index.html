@@ -19,19 +19,21 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="http://example.com/about/index.html">
+    <meta name="description" content="花式栈溢出stack pivoting（栈翻转）原理：劫持栈指针指向攻击者所能控制的内存处，然后再在相应的位置进行rop，一般在以下情况适用： 1.可以控制的栈溢出的字节数比较少，难以构造较长的rop链 2.开启了pie保护，栈地址未知，我们可以将栈劫持到已知的区域。 3.其他漏洞难以利用，我们需要进行转换，比如说将栈劫持到堆空间，从而在堆上写rop及进行漏洞利用 运用stack pivoting">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2024/09/16/%E8%8A%B1%E5%BC%8F%E6%A0%88%E6%BA%A2%E5%87%BAstack%20pivoting%EF%BC%88%E6%A0%88%E7%BF%BB%E8%BD%AC%EF%BC%89/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="花式栈溢出stack pivoting（栈翻转）原理：劫持栈指针指向攻击者所能控制的内存处，然后再在相应的位置进行rop，一般在以下情况适用： 1.可以控制的栈溢出的字节数比较少，难以构造较长的rop链 2.开启了pie保护，栈地址未知，我们可以将栈劫持到已知的区域。 3.其他漏洞难以利用，我们需要进行转换，比如说将栈劫持到堆空间，从而在堆上写rop及进行漏洞利用 运用stack pivoting">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-09-16T08:26:09.000Z">
-<meta property="article:modified_time" content="2024-09-16T08:26:49.935Z">
+<meta property="article:published_time" content="2024-09-16T09:51:33.437Z">
+<meta property="article:modified_time" content="2024-08-30T03:04:08.194Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>关于 - Hexo</title>
+  <title>Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -91,7 +93,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -197,9 +199,49 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="关于"></span>
+            <span id="subtitle" data-typed-text=""></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-09-16 17:51" pubdate>
+          2024年9月16日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          318 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          3 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
 
         
       </div>
@@ -215,75 +257,144 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-            <div class="about-avatar">
-              <img src="/img/avatar.png" srcset="/img/loading.gif" lazyload class="img-fluid" alt="avatar">
-            </div>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center">
-  <div class="about-info">
-    <div class="about-name">Fluid</div>
-    <div class="about-intro">An elegant theme for Hexo</div>
-    <div class="about-icons">
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
       
-        
-        
-        
-        <a href=https://github.com class="
-           hint--bottom hint--rounded"
-           aria-label="GitHub"
-           target="_blank"
-        >
-          <i class="iconfont icon-github-fill" aria-hidden="true"></i>
-          
-        </a>
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header"></h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="花式栈溢出stack-pivoting（栈翻转）"><a href="#花式栈溢出stack-pivoting（栈翻转）" class="headerlink" title="花式栈溢出stack pivoting（栈翻转）"></a>花式栈溢出stack pivoting（栈翻转）</h2><p>原理：劫持栈指针指向攻击者所能控制的内存处，然后再在相应的位置进行rop，一般在以下情况适用：</p>
+<p>1.可以控制的栈溢出的字节数比较少，难以构造较长的rop链</p>
+<p>2.开启了pie保护，栈地址未知，我们可以将栈劫持到已知的区域。</p>
+<p>3.其他漏洞难以利用，我们需要进行转换，比如说将栈劫持到堆空间，从而在堆上写rop及进行漏洞利用</p>
+<p>运用stack pivoting有以下几个要求</p>
+<p>1.可以控制程序执行流</p>
+<p>2.可以控制sp指针，一般来说，控制栈指针会使用rop，常见的控制栈指针的gadgets一般是pop rsp&#x2F;esp</p>
+<p>当然，还会有一些其他的方法，比如说libc_csu_init中的gadgets，我们通过偏移就可以得到控制rsp指针。上面是正常的，下面是偏移的。</p>
+<p>libc_csu_init:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs asm">.text:080485E8                               loc_80485E8:                            ; CODE XREF: __libc_csu_init+57↓j<br>.text:080485E8 8B 44 24 38                   mov     eax, [esp+2Ch+arg_8]<br>.text:080485EC 89 2C 24                      mov     [esp+2Ch+var_2C], ebp<br>.text:080485EF 89 44 24 08                   mov     [esp+2Ch+var_24], eax<br>.text:080485F3 8B 44 24 34                   mov     eax, [esp+2Ch+arg_4]<br>.text:080485F7 89 44 24 04                   mov     [esp+2Ch+var_28], eax<br>.text:080485FB FF 94 BB 08 FF FF FF          call    ds:(__frame_dummy_init_array_entry - 804A000h)[ebx+edi*4]<br>.text:080485FB<br>.text:08048602 83 C7 01                      add     edi, 1<br>.text:08048605 39 F7                         cmp     edi, esi<br>.text:08048607 75 DF                         jnz     short loc_80485E8<br>.text:08048607<br>.text:08048609<br>.text:08048609                               loc_8048609:                            ; CODE XREF: __libc_csu_init+30↑j<br>.text:08048609 83 C4 1C                      add     esp, 1Ch<br>.text:0804860C 5B                            pop     ebx<br>.text:0804860D 5E                            pop     esi<br>.text:0804860E 5F                            pop     edi<br>.text:0804860F 5D                            pop     ebp<br>.text:08048610 C3                            retn<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div></div>
+      <div>http://example.com/2024/09/16/花式栈溢出stack pivoting（栈翻转）/</div>
+    </div>
+    <div class="license-meta">
       
-        
-        
-        
-        <a href=https://douban.com class="
-           hint--bottom hint--rounded"
-           aria-label="豆瓣"
-           target="_blank"
-        >
-          <i class="iconfont icon-douban-fill" aria-hidden="true"></i>
-          
-        </a>
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
       
-        
-        
-        
-        <a  class="qr-trigger
-           "
-           
-           target="_self"
-        >
-          <i class="iconfont icon-wechat-fill" aria-hidden="true"></i>
-          
-            <img class="qr-img" src="/img/favicon.png" srcset="/img/loading.gif" lazyload alt="qrcode" />
-          
-        </a>
       
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年9月16日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/09/16/%E8%8A%B1%E5%BC%8F%E6%A0%88%E6%BA%A2%E5%87%BAstack%20smash%EF%BC%88%E7%BB%95%E8%BF%87canary%E4%BF%9D%E6%8A%A4%EF%BC%89/" title="">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/09/16/%E5%85%B3%E4%BA%8E%E5%B8%83%E7%BD%AE%E6%A0%88%E7%9A%84%E8%A7%81%E8%A7%A3/" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
     </div>
   </div>
 </div>
 
-<article class="about-content page-content mt-5">
-  <div class="markdown-body">
-    
-  </div>
-
-  
-</article>
-
 
 
 
@@ -310,11 +421,8 @@
 
 
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
     
 
     
@@ -406,6 +514,46 @@
   
 
 
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
 
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
