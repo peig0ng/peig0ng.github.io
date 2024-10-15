@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>glibc堆管理机制</title>
+    <link href="/2024/10/15/glibc%E5%A0%86%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/"/>
+    <url>/2024/10/15/glibc%E5%A0%86%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/</url>
+    
+    <content type="html"><![CDATA[<h2 id="glibc堆管理机制"><a href="#glibc堆管理机制" class="headerlink" title="glibc堆管理机制"></a>glibc堆管理机制</h2><h3 id="Memory-ALLcator"><a href="#Memory-ALLcator" class="headerlink" title="Memory ALLcator"></a>Memory ALLcator</h3><p>常见的内存管理机制：</p><p>​dlmalloc：通用分配器</p><p>​ptmalloc：glibc分配器，继承自dlmalloc，并提供了多线程支持，主要研究对象</p><p>​jemalloc：Firefox</p><p>​tcmalloc：Chrome</p><p>​其他：编程语言内存分配及回收，比如python</p><h3 id="malloc工作机制"><a href="#malloc工作机制" class="headerlink" title="malloc工作机制"></a>malloc工作机制</h3><p>第一次调用malloc</p><p>如果调用分配大小大于128kb，会去调用mmap函数，交由内核函数sys_mmap处理</p><p>如果调用分配大小小于128kb，会去调用brk()函数，交由内核函数sys_brk处理</p><h3 id="内存分配机制"><a href="#内存分配机制" class="headerlink" title="内存分配机制"></a>内存分配机制</h3><p>头文件：#include&lt;unistd.h&gt;</p><p>​brk()：</p><p>​函数原型：int brk (void*end_data_segment)</p><p>​功能和作用：用于设置program_break指向的位置</p><p>​sbrk()</p><p>​函数原型：void* sbrk(intptr_t increment)</p><p>​功能和作用：同brk()，参数可以是负数。执行成功返回上一次program_break的值，可以设置参数为0返回当</p><p>前的program_break.</p><p>​mmap()</p><p>​功能和作用：当用户申请空间大于等于128kb，也就是0x20000字节时，不再使用brk()进行分配，改为使用</p><p>mmap()。</p><p>​unmmap()</p><p>​功能和作用：堆mmap()申请的空间进行回收。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>分类1</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>标签1</tag>
+      
+      <tag>标签2</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title></title>
     <link href="/2024/09/16/%E5%AF%84%E5%AD%98%E5%99%A8/"/>
     <url>/2024/09/16/%E5%AF%84%E5%AD%98%E5%99%A8/</url>
@@ -282,19 +309,6 @@
     <url>/2024/09/16/got%E4%B8%8Eplt/</url>
     
     <content type="html"><![CDATA[<h2 id="Linux动态链接中的got-plt表、plt表"><a href="#Linux动态链接中的got-plt表、plt表" class="headerlink" title="Linux动态链接中的got.plt表、plt表"></a>Linux动态链接中的got.plt表、plt表</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span>&#123;<br>sleep(<span class="hljs-number">0</span>);<br><span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;aaaaaaaaa&quot;</span>);<br>sleep(<span class="hljs-number">0</span>);<br><span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;bbbbbbbbb&quot;</span>);<br>sleep(<span class="hljs-number">0</span>);<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p>用这一段代码进行实验，得到函数的真实地址一般采用got表进行泄露，只要执行puts函数之后，got表里面放的就是puts函数的真实地址，sleep是为了下断点</p><p>真实地址是指在当前libc条件下，真实地址&#x3D;libc.base(libc的基地址)+libc.symbol[函数名称] (函数在libc中的偏移)</p><p>gcc -g -z execstack -fno-stack-protector test.c -o test编译生成文件，关闭栈保护</p><p>在sleep处下断点，运行，finish到第一个puts函数前面，si进入puts函数</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs asm">[ DISASM / x86-64 / set emulate on ]<br> ► 0x400430       &lt;puts@plt&gt;                         jmp    qword ptr [rip + 0x200be2]    &lt;puts@got[plt]&gt;<br><br>   0x400436       &lt;puts@plt+6&gt;                       push   0<br>   0x40043b       &lt;puts@plt+11&gt;                      jmp    0x400420                      &lt;0x400420&gt;<br>    ↓<br>   0x400420                                          push   qword ptr [rip + 0x200be2]    &lt;_GLOBAL_OFFSET_TABLE_+8&gt;<br>   0x400426                                          jmp    qword ptr [rip + 0x200be4]    &lt;_dl_runtime_resolve_xsavec&gt;<br>    ↓<br>   0x7ffff7fd8d30 &lt;_dl_runtime_resolve_xsavec&gt;       endbr64 <br>   0x7ffff7fd8d34 &lt;_dl_runtime_resolve_xsavec+4&gt;     push   rbx<br>   0x7ffff7fd8d35 &lt;_dl_runtime_resolve_xsavec+5&gt;     mov    rbx, rsp<br>   0x7ffff7fd8d38 &lt;_dl_runtime_resolve_xsavec+8&gt;     and    rsp, 0xffffffffffffffc0<br>   0x7ffff7fd8d3c &lt;_dl_runtime_resolve_xsavec+12&gt;    sub    rsp, qword ptr [rip + 0x23f4d] &lt;_rtld_global_ro+432&gt;<br>   0x7ffff7fd8d43 &lt;_dl_runtime_resolve_xsavec+19&gt;    mov    qword ptr [rsp], rax<br></code></pre></td></tr></table></figure><p>此时在ida里面看一下puts函数got表地址，程序下一步要跳转到rip+0x200be2的地址执行后续也就是0x601018的位置</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs asm">pwndbg&gt; x/4gx 0x601018<br>0x601018 &lt;puts@got.plt&gt;:0x00000000004004360x00007ffff7c29dc0<br>0x601028 &lt;sleep@got.plt&gt;:0x00007ffff7cea5700x0000000000000000<br></code></pre></td></tr></table></figure><p>此时puts函数的真实地址还没有泄露，程序去执行0x400436的位置，也就是往下执行，ni走完整个puts函数finish步出函数</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs asm">pwndbg&gt; x/4gx 0x601018<br>0x601018 &lt;puts@got.plt&gt;:0x00007ffff7c80e500x00007ffff7c29dc0<br>0x601028 &lt;sleep@got.plt&gt;:0x00007ffff7cea5700x0000000000000000<br></code></pre></td></tr></table></figure><p>此时的got表如上面，可以看到got表中已经存放puts函数的真实地址单步步入下一个puts。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs asm">► 0x400430       &lt;puts@plt&gt;    jmp    qword ptr [rip + 0x200be2]    &lt;puts&gt;<br>   ↓<br>  0x7ffff7c80e50 &lt;puts&gt;        endbr64 <br>  0x7ffff7c80e54 &lt;puts+4&gt;      push   r14<br>  0x7ffff7c80e56 &lt;puts+6&gt;      push   r13<br>  0x7ffff7c80e58 &lt;puts+8&gt;      push   r12<br>  0x7ffff7c80e5a &lt;puts+10&gt;     mov    r12, rdi<br>  0x7ffff7c80e5d &lt;puts+13&gt;     push   rbp<br>  0x7ffff7c80e5e &lt;puts+14&gt;     push   rbx<br>  0x7ffff7c80e5f &lt;puts+15&gt;     sub    rsp, 0x10<br>  0x7ffff7c80e63 &lt;puts+19&gt;     call   *ABS*+0xa86a0@plt                &lt;*ABS*+0xa86a0@plt&gt;<br><br>  0x7ffff7c80e68 &lt;puts+24&gt;     mov    r13, qword ptr [rip + 0x198fc9]<br></code></pre></td></tr></table></figure><p>可以看到下一步直接就是执行了puts函数的真实地址</p><p>所以，栈进行leak时，可以根据got表中存放的真实地址来泄露Iibc基地址：<br>libc_base&#x3D;leak_function_addr_in_stack-libc.symbols[‘function’]</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/2024/09/16/glibc%E5%A0%86%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/"/>
-    <url>/2024/09/16/glibc%E5%A0%86%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/</url>
-    
-    <content type="html"><![CDATA[<h2 id="glibc堆管理机制"><a href="#glibc堆管理机制" class="headerlink" title="glibc堆管理机制"></a>glibc堆管理机制</h2><h3 id="Memory-ALLcator"><a href="#Memory-ALLcator" class="headerlink" title="Memory ALLcator"></a>Memory ALLcator</h3><p>常见的内存管理机制：</p><p>​dlmalloc：通用分配器</p><p>​ptmalloc：glibc分配器，继承自dlmalloc，并提供了多线程支持，主要研究对象</p><p>​jemalloc：Firefox</p><p>​tcmalloc：Chrome</p><p>​其他：编程语言内存分配及回收，比如python</p><h3 id="malloc工作机制"><a href="#malloc工作机制" class="headerlink" title="malloc工作机制"></a>malloc工作机制</h3><p>第一次调用malloc</p><p>如果调用分配大小大于128kb，会去调用mmap函数，交由内核函数sys_mmap处理</p><p>如果调用分配大小小于128kb，会去调用brk()函数，交由内核函数sys_brk处理</p><h3 id="内存分配机制"><a href="#内存分配机制" class="headerlink" title="内存分配机制"></a>内存分配机制</h3><p>头文件：#include&lt;unistd.h&gt;</p><p>​brk()：</p><p>​函数原型：int brk (void*end_data_segment)</p><p>​功能和作用：用于设置program_break指向的位置</p><p>​sbrk()</p><p>​函数原型：void* sbrk(intptr_t increment)</p><p>​功能和作用：同brk()，参数可以是负数。执行成功返回上一次program_break的值，可以设置参数为0返回当</p><p>前的program_break.</p><p>​mmap()</p><p>​功能和作用：当用户申请空间大于等于128kb，也就是0x20000字节时，不再使用brk()进行分配，改为使用</p><p>mmap()。</p><p>​unmmap()</p><p>​功能和作用：堆mmap()申请的空间进行回收。</p>]]></content>
     
     
     

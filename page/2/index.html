@@ -87,7 +87,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>一直折腾下去</strong>
+      <strong>whenever you go</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -220,6 +220,39 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/09/16/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E%EF%BC%88hijack%20got%EF%BC%89/" target="_self">
+          
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/09/16/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E%EF%BC%88hijack%20got%EF%BC%89/" target="_self">
+        <div>
+          格式化字符串漏洞（hijack got）主函数： 1234567891011121314151617181920212223242526272829303132int __cdecl __noreturn main(int argc, const char **argv, const char **envp)&#123;  int command; // eax  char s1[40]; //
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-09-16 17:51" pubdate>
+              2024-09-16
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
 
   <div class="row mx-auto index-card">
     
@@ -500,39 +533,6 @@
       <a class="index-excerpt index-excerpt__noimg" href="/2024/09/16/Ret2sys%5B%E5%A4%9A%E7%B3%BB%E7%BB%9F%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%5D/" target="_self">
         <div>
           Ret2syscall[多系统函数调用32位]主函数存在溢出点，静态编译，gadgets很多，符合ret2syscall 123456789101112int __cdecl main(int argc, const char **argv, const char **envp)&#123;  int v4; // [esp+10h] [ebp-20h] BYREF  setvbuf(stdout
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2024-09-16 17:51" pubdate>
-              2024-09-16
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2024/09/16/mprotect%E5%87%BD%E6%95%B0%E5%8F%AF%E4%BB%A5%E4%BF%AE%E6%94%B9%E5%86%85%E5%AD%98%E6%A0%88%E7%9A%84%E6%9D%83%E9%99%90/" target="_self">
-          
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/09/16/mprotect%E5%87%BD%E6%95%B0%E5%8F%AF%E4%BB%A5%E4%BF%AE%E6%94%B9%E5%86%85%E5%AD%98%E6%A0%88%E7%9A%84%E6%9D%83%E9%99%90/" target="_self">
-        <div>
-          mprotect函数可以修改内存栈的权限函数原型： 123#include &lt;unistd.h&gt;#include &lt;sys/mmap.h&gt;int mprotect(const void *start, size_t len, int prot);  需要传入三个参数，mprotect()函数是把自start开始的，长度为len的内存区的保护属性修改为prot指定的值 mpr
         </div>
       </a>
 
