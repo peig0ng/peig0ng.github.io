@@ -238,6 +238,408 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2024/10/15/Linux%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90%EF%BC%89/" target="_self">
+          <img src="/img/dog.jpg" srcset="/img/loading.gif" lazyload alt="关于布置栈的见解">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/10/15/Linux%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90%EF%BC%89/" target="_self">
+          关于布置栈的见解
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2024/10/15/Linux%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90%EF%BC%89/" target="_self">
+        <div>
+          系统调用概述计算机系统的各种硬件资源是有限的，在现代多任务操作系统上同时运行的多个进程都需要访问这些资源，为了更好的管理这些资源进程是不允许直接操作的，所有对这些资源的访问都必须有操作系统控制。也就是说操作系统是使用这些资源的唯一入口，而这个入口就是操作系统提供的系统调用（System Call）。在linux中系统调用是用户空间访问内核的唯一手段，除异常和陷入外，他们是内核唯一的合法入口。 一般
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-10-15 12:00" pubdate>
+              2024-10-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/pwn/" class="category-chain-item">pwn</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/linux/">#linux</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2024/10/15/SROP/" target="_self">
+          <img src="/img/dog.jpg" srcset="/img/loading.gif" lazyload alt="SROP（利用signal机制）">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/10/15/SROP/" target="_self">
+          SROP（利用signal机制）
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2024/10/15/SROP/" target="_self">
+        <div>
+          SROP（利用signal机制）例题：ciscn_2019_s_3 程序较短，感觉直接看汇编比较好(该程序由内联汇编写成的) 首先了解一下64位的系统调用 传参方式：首先将系统调用号传入rax，然后将参数从左到右依次存入rdi，rsi，rdx等寄存器中，返回值存在rax寄存器 调用号：sys_read的调用号为0，sys_write的调用号为1，stub_execve的调用号为59，stub_rt
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-10-15 12:00" pubdate>
+              2024-10-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/pwn/" class="category-chain-item">pwn</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/stack/">#stack</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2024/10/15/glibc%E5%A0%86%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" target="_self">
+          <img src="/img/dog.jpg" srcset="/img/loading.gif" lazyload alt="glibc堆管理机制">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/10/15/glibc%E5%A0%86%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" target="_self">
+          glibc堆管理机制
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2024/10/15/glibc%E5%A0%86%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" target="_self">
+        <div>
+          glibc堆管理机制Memory ALLcator常见的内存管理机制： ​	dlmalloc：通用分配器 ​	ptmalloc：glibc分配器，继承自dlmalloc，并提供了多线程支持，主要研究对象 ​	jemalloc：Firefox ​	tcmalloc：Chrome ​	其他：编程语言内存分配及回收，比如python malloc工作机制第一次调用malloc 如果调用分配大小大于128
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-10-15 12:00" pubdate>
+              2024-10-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/pwn/" class="category-chain-item">pwn</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/glibc/">#glibc</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2024/10/15/ROP-ret2__libc_csu_init%EF%BC%8864%E4%BD%8DELF%EF%BC%89/" target="_self">
+          <img src="/img/dog.jpg" srcset="/img/loading.gif" lazyload alt="ROP-ret2__libc_csu_init（64位ELF）">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/10/15/ROP-ret2__libc_csu_init%EF%BC%8864%E4%BD%8DELF%EF%BC%89/" target="_self">
+          ROP-ret2__libc_csu_init（64位ELF）
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2024/10/15/ROP-ret2__libc_csu_init%EF%BC%8864%E4%BD%8DELF%EF%BC%89/" target="_self">
+        <div>
+          ROP-ret2__libc_csu_init（64位ELF） 首先64位文件传参方式：当参数少于7个时，参数从左到右放入寄存器：rdi,rsi,rdx,rcx,r8,r9。 当参数为7个以上时，前六个与前面一样，但后面的要依次放入栈中，即和32位程序一样。 例子：function(a,b,c,d,e,f,g,h) 参数a放入rdi，参数b放入rsi，参数c放入rdx，参数d放入rcx，参数e放入
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-10-15 12:00" pubdate>
+              2024-10-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/pwn/" class="category-chain-item">pwn</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/stack/">#stack</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2024/10/15/got%E4%B8%8Eplt/" target="_self">
+          <img src="/img/dog.jpg" srcset="/img/loading.gif" lazyload alt="Linux动态链接中的got.plt表、plt表">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/10/15/got%E4%B8%8Eplt/" target="_self">
+          Linux动态链接中的got.plt表、plt表
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2024/10/15/got%E4%B8%8Eplt/" target="_self">
+        <div>
+          Linux动态链接中的got.plt表、plt表12345678910#include&lt;stdio.h&gt;#include&lt;string.h&gt;int main()&#123;	sleep(0);	puts(&quot;aaaaaaaaa&quot;);	sleep(0);	puts(&quot;bbbbbbbbb&quot;);	sleep(0);	return 0;&#12
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-10-15 12:00" pubdate>
+              2024-10-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/pwn/" class="category-chain-item">pwn</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/linux/">#linux</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2024/10/15/mprotect%E5%87%BD%E6%95%B0%E5%8F%AF%E4%BB%A5%E4%BF%AE%E6%94%B9%E5%86%85%E5%AD%98%E6%A0%88%E7%9A%84%E6%9D%83%E9%99%90/" target="_self">
+          <img src="/img/dog.jpg" srcset="/img/loading.gif" lazyload alt="mprotect函数可以修改内存栈的权限">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/10/15/mprotect%E5%87%BD%E6%95%B0%E5%8F%AF%E4%BB%A5%E4%BF%AE%E6%94%B9%E5%86%85%E5%AD%98%E6%A0%88%E7%9A%84%E6%9D%83%E9%99%90/" target="_self">
+          mprotect函数可以修改内存栈的权限
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2024/10/15/mprotect%E5%87%BD%E6%95%B0%E5%8F%AF%E4%BB%A5%E4%BF%AE%E6%94%B9%E5%86%85%E5%AD%98%E6%A0%88%E7%9A%84%E6%9D%83%E9%99%90/" target="_self">
+        <div>
+          mprotect函数可以修改内存栈的权限函数原型： 123#include &lt;unistd.h&gt;#include &lt;sys/mmap.h&gt;int mprotect(const void *start, size_t len, int prot);  需要传入三个参数，mprotect()函数是把自start开始的，长度为len的内存区的保护属性修改为prot指定的值 mpr
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-10-15 12:00" pubdate>
+              2024-10-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/pwn/" class="category-chain-item">pwn</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/stack/">#stack</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2024/10/15/%E5%85%B3%E4%BA%8E%E5%B8%83%E7%BD%AE%E6%A0%88%E7%9A%84%E8%A7%81%E8%A7%A3/" target="_self">
           <img src="/img/dog.jpg" srcset="/img/loading.gif" lazyload alt="关于布置栈的见解">
         </a>
@@ -296,6 +698,112 @@
               <a href="/tags/stack/">#stack</a>
             
           </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2024/10/15/%E8%B0%83%E8%AF%95%E5%9F%BA%E7%A1%80/" target="_self">
+          <img src="/img/dog.jpg" srcset="/img/loading.gif" lazyload alt="基本调试方法">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/10/15/%E8%B0%83%E8%AF%95%E5%9F%BA%E7%A1%80/" target="_self">
+          基本调试方法
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2024/10/15/%E8%B0%83%E8%AF%95%E5%9F%BA%E7%A1%80/" target="_self">
+        <div>
+          调试基础基本命令包括以下几个：-    1.输入gdb或者gdb-multiarch program进行本地调试 -    2.如果是本地程序的话，可以输入entry或者start进入第一条指令   -  entry  -     如果是本地调试有main函数，则可以输入main直接进入main函数    -       main  -    3.如果调试的程序有源代码，则输入n执行的时候是按照源
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-10-15 12:00" pubdate>
+              2024-10-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/pwn/" class="category-chain-item">pwn</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/other/">#other</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2024/09/16/%E5%A4%9A%E8%BF%9B%E7%A8%8B%E4%B8%8B%E7%9A%84%E7%88%86%E7%A0%B4%EF%BC%88fork%EF%BC%89/" target="_self">
+          <img src="/img/dog.jpg" srcset="/img/loading.gif" lazyload alt="">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/09/16/%E5%A4%9A%E8%BF%9B%E7%A8%8B%E4%B8%8B%E7%9A%84%E7%88%86%E7%A0%B4%EF%BC%88fork%EF%BC%89/" target="_self">
+          
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2024/09/16/%E5%A4%9A%E8%BF%9B%E7%A8%8B%E4%B8%8B%E7%9A%84%E7%88%86%E7%A0%B4%EF%BC%88fork%EF%BC%89/" target="_self">
+        <div>
+          多进程下的爆破（fork）pid_t fork(void) 创建一个新进程，操作系统会复制父进程的地址空间中的内容给子进程。调用fork函数后，子进程与父进程的执行顺序是无法确定的，子进程无法通过fork()来创建子进程 该函数有三种返回值 （1）在父进程中，fork返回新创建的子进程的进程id （2）在子进程中，fork返回0 （3）如果出现错误，fork返回一个负值
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-09-16 17:51" pubdate>
+              2024-09-16
+            </time>
+          </div>
+        
+        
         
       </div>
     </article>
