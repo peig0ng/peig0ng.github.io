@@ -23,14 +23,14 @@
         
         <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="first blood">
+<meta property="og:title" content="ISCC的first blood">
 <meta property="og:url" content="http://example.com/2025/05/20/%E4%B8%80%E8%A1%80%E7%9A%84pycc/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-05-20T02:30:05.000Z">
-<meta property="article:modified_time" content="2025-05-20T02:58:31.598Z">
+<meta property="article:modified_time" content="2025-05-20T03:19:47.350Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="wp">
 <meta name="twitter:card" content="summary">
@@ -46,7 +46,7 @@
     
     <title>
         
-            first blood | lpp_blog
+            ISCC的first blood | lpp_blog
         
     </title>
 
@@ -370,7 +370,7 @@
 		<div class="article-title relative w-full">
 			
 			<div class="w-full flex items-center pt-6 justify-start">
-				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">first blood</h1>
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">ISCC的first blood</h1>
 			</div>
 			
 		</div>
@@ -396,8 +396,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-05-20 10:58:31</span>
-            <span class="mobile">2025-05-20 10:58:31</span>
+            <span class="desktop">2025-05-20 11:19:47</span>
+            <span class="mobile">2025-05-20 11:19:47</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -435,7 +435,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>591 Words</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>523 Words</span>
         </span>
     
     
@@ -456,42 +456,39 @@
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
 			<p> <strong>在此之前先骂iscc，全国最垃圾的比赛，比不上🏀杯，运维垃圾，出题人水平低，甚至能被rce，客服沉默，题目抽象(wcnmiscc)</strong></p>
-<p>下面记录一下做区域赛的那道misc2-取证分析。</p>
 <p>百度网盘的东西下载下来之后，发现是veme内存镜像。用r-studio打开，在其中发现有一个hahaha.zip文件</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/./../images/wps1.jpg"
+                     data-src="/./../images/wps6.jpg"
                       alt="img"
                 >利用vol将该文件导出</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/./../images/wps2.jpg"
+                     data-src="/./../images/wps7.jpg"
                       alt="img"
                 > </p>
 <p>导出之后得到</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/./../images/wps3.jpg"
+                     data-src="/./../images/wps8.jpg"
                       alt="img"
                 > </p>
 <p>压缩包是加密的，pkf恢复密码<img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/./../images/wps4.jpg"
+                     data-src="/./../images/wps9.jpg"
                       alt="img"
                 >。</p>
 <p>Hint1：rxms{ husqzqdq oubtqd }，解出来flag{ vigenere cipher }，但是这个flag不对，作为提示维吉尼亚解密，维吉尼亚解密需要密钥和密文，下载的附件doc里面改为zip在[Content_Types].xml里面发现密文 </p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/./../images/wps5.jpg"
+                     data-src="/./../images/wps10.jpg"
                       alt="img"
                 >现在需要找密钥，给出的alphabet.txt文件里面有坐标。</p>
-<p>(2,10) (4,8) (2,4) (3,4) (11,13) (2,11) (1,1) (10,26) (5,6) (5,9)。并且提示杨辉三角有关</p>
-<p>坐标格式(列，行)，对应组合数公式m&#x3D;(列−1&#x2F;行−1)</p>
 <h2 id="计算组合数-m"><a href="#计算组合数-m" class="headerlink" title="计算组合数 $m$"></a>计算组合数 $m$</h2><p>对每个坐标 $(c, r)$，计算：</p>
 <table>
 <thead>
@@ -558,8 +555,8 @@
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/./../images/OIP.jpeg"
-                      alt="一文概览密码学发展史、基本原理与常见算法_腾讯新闻"
+                     data-src="/./../images/viji.png"
+                      alt="[密码学篇]古典密码之维吉尼亚密码_维吉尼亚密码加密公式_「已注销」的博客-CSDN博客"
                 ></p>
 <p>长度有限，对26取模r&#x3D;m mod 26，如果r&#x3D;0 就改成 26</p>
 <table>
@@ -628,8 +625,8 @@
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/./../images/edd14ebad0d1cdad165db0bb993d1d6.jpg"
-                      alt="edd14ebad0d1cdad165db0bb993d1d6"
+                     data-src="/./../images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250520111245.jpg"
+                      alt="微信图片_20250520111245"
                 ></p>
 <p> <strong>在最后再骂iscc，全国最垃圾的比赛，比不上🏀杯，运维垃圾，出题人水平低，甚至能被rce，客服沉默，题目抽象(wcnmiscc)</strong></p>
 
@@ -639,14 +636,14 @@
 		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
 			<div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> first blood</li>
+        <li><strong>Title:</strong> ISCC的first blood</li>
         <li><strong>Author:</strong> luyanpei</li>
         <li><strong>Created at
                 :</strong> 2025-05-20 10:30:05</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-05-20 10:58:31
+                    :</strong> 2025-05-20 11:19:47
             </li>
         
         <li>
@@ -708,7 +705,7 @@
 		<div class="post-toc-wrap">
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
-		<div class="page-title">first blood</div>
+		<div class="page-title">ISCC的first blood</div>
 		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E7%BB%84%E5%90%88%E6%95%B0-m"><span class="nav-text">计算组合数 $m$</span></a></li></ol>
 
 	</div>
@@ -742,7 +739,7 @@
                     </span>
                     
                         <span>
-                            18.4k words in total
+                            18.3k words in total
                         </span>
                     
                 </p>
