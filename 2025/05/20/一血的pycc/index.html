@@ -13,7 +13,7 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2025/05/09/漏洞利用手法汇总/"/>
+    <link rel="canonical" href="http://example.com/2025/05/20/一血的pycc/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
@@ -23,16 +23,16 @@
         
         <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pwn漏洞利用手法汇总">
-<meta property="og:url" content="http://example.com/2025/05/09/%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E6%89%8B%E6%B3%95%E6%B1%87%E6%80%BB/index.html">
+<meta property="og:title" content="first blood">
+<meta property="og:url" content="http://example.com/2025/05/20/%E4%B8%80%E8%A1%80%E7%9A%84pycc/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
-<meta property="article:published_time" content="2025-05-09T10:07:05.000Z">
-<meta property="article:modified_time" content="2025-05-09T10:49:36.289Z">
+<meta property="article:published_time" content="2025-05-20T02:30:05.000Z">
+<meta property="article:modified_time" content="2025-05-20T02:58:31.598Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="总结">
+<meta property="article:tag" content="wp">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
     
@@ -46,7 +46,7 @@
     
     <title>
         
-            pwn漏洞利用手法汇总 | lpp_blog
+            first blood | lpp_blog
         
     </title>
 
@@ -370,7 +370,7 @@
 		<div class="article-title relative w-full">
 			
 			<div class="w-full flex items-center pt-6 justify-start">
-				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">pwn漏洞利用手法汇总</h1>
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">first blood</h1>
 			</div>
 			
 		</div>
@@ -389,15 +389,15 @@
 					<div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2025-05-09 18:07:05</span>
-        <span class="mobile">2025-05-09 18:07:05</span>
+        <span class="desktop">2025-05-20 10:30:05</span>
+        <span class="mobile">2025-05-20 10:30:05</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-05-09 18:49:36</span>
-            <span class="mobile">2025-05-09 18:49:36</span>
+            <span class="desktop">2025-05-20 10:58:31</span>
+            <span class="mobile">2025-05-20 10:58:31</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -411,7 +411,7 @@
                     
                         
                         <li>
-                            <a href="/categories/%E6%80%BB%E7%BB%93/">总结</a>&nbsp;
+                            <a href="/categories/wp/">wp</a>&nbsp;
                         </li>
                     
                     
@@ -425,7 +425,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E6%80%BB%E7%BB%93/">总结</a>&nbsp;
+                        <a href="/tags/wp/">wp</a>&nbsp;
                     </li>
                 
             </ul>
@@ -435,12 +435,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.1k Words</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>591 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>4 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>2 Mins</span>
         </span>
     
     
@@ -455,155 +455,183 @@
 
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-			<h3 id="1-栈溢出（Stack-Overflow）"><a href="#1-栈溢出（Stack-Overflow）" class="headerlink" title="1. 栈溢出（Stack Overflow）"></a>1. 栈溢出（Stack Overflow）</h3><ol>
-<li><p><strong>简单的 ret 控制流</strong></p>
-<ul>
-<li><p>利用函数 <code>gets()</code>&#x2F;<code>strcpy()</code> 等读入超过缓冲区大小的数据，覆盖保存的 <code>RIP</code>。</p>
-</li>
-<li><p>Payload 结构：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ padding to saved RBP ] [ saved RBP overwrite ] [ new RIP ]</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p>示例：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void vuln() &#123;</span><br><span class="line">    char buf[64];</span><br><span class="line">    gets(buf);</span><br><span class="line">&#125;</span><br><span class="line">// 溢出 64 字节 + 8 字节 RBP，然后覆盖 RIP</span><br><span class="line">payload = b&quot;A&quot;*72 + p64(0x400570);</span><br></pre></td></tr></table></figure></div></li>
-</ul>
-</li>
-<li><p><strong>ROP （Return-Oriented Programming）</strong></p>
-<ul>
-<li><p><strong>目的</strong>：在开启 NX （DEP）时，无法执行栈上 shellcode，只能“串”现有代码片段（Gadget）形成链。</p>
-</li>
-<li><p><strong>Gadget 搜集</strong>：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ROPgadget --binary target_binary --only &quot;pop|ret&quot;</span><br><span class="line">rp++ target_binary</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p><strong>链构造</strong>：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rop = ROP(elffile)</span><br><span class="line">rop.raw(b&quot;A&quot;*offset)</span><br><span class="line">rop.call(elffile.plt[&#x27;puts&#x27;], [elf.got[&#x27;puts&#x27;]])</span><br><span class="line">rop.call(elffile.symbols[&#x27;main&#x27;])</span><br><span class="line">payload = rop.chain()</span><br></pre></td></tr></table></figure></div></li>
-</ul>
-</li>
-<li><p><strong>ret2libc</strong></p>
-<ul>
-<li><strong>思路</strong>：通过泄漏 libc 中函数地址，算出 <code>system()</code>、<code>&quot;/bin/sh&quot;</code> 在内存中的偏移，再覆盖 <code>RIP</code> 跳到 <code>system</code>。</li>
-<li><strong>流程</strong>：<ol>
-<li>ROP 调用 <code>puts(puts@got)</code> → 泄漏 libc 基址。</li>
-<li>计算 <code>system = libc_base + offset_system</code>，<code>binsh = libc_base + offset_str_sh</code>。</li>
-<li>再次溢出，ROP → <code>system(binsh)</code>。</li>
-</ol>
-</li>
-</ul>
-</li>
-<li><p><strong>ret2dlresolve</strong></p>
-<ul>
-<li><p><strong>用途</strong>：当 binary 没有 <code>system</code> 或你想不修改 GOT，只能借助动态链接器 <code>_dl_runtime_resolve</code> 构造符号解析。</p>
-</li>
-<li><p><strong>核心</strong>：构造假的 <code>.rel.plt</code>&#x2F;<code>.dynsym</code>&#x2F;<code>.dynstr</code> 结构体片段，ROP 跳到 <code>_dl_runtime_resolve</code>，让它解析并调用任意函数。</p>
-</li>
-<li><p><strong>代码片段</strong>（pwntools 自动化）：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">dlresolve = Ret2dlresolvePayload(elf, symbol=&quot;system&quot;, args=[&quot;/bin/sh&quot;])</span><br><span class="line">rop = ROP(elf)</span><br><span class="line">rop.raw(b&quot;A&quot;*offset)</span><br><span class="line">rop.call(elf.symbols[&#x27;read&#x27;], [0, dlresolve.data_addr, len(dlresolve.data)])</span><br><span class="line">rop.call(dlresolve.resolve_addr)</span><br><span class="line">payload = rop.chain() + dlresolve.data</span><br></pre></td></tr></table></figure></div></li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="2-格式化字符串（Format-String）"><a href="#2-格式化字符串（Format-String）" class="headerlink" title="2. 格式化字符串（Format String）"></a>2. 格式化字符串（Format String）</h3><ol>
-<li><p><strong>%p 和 %n 原理</strong></p>
-<ul>
-<li><code>%p</code>：打印栈上指针，泄漏地址。</li>
-<li><code>%n</code>：将到目前写入的字节数写入对应参数指向的地址，可任意写。</li>
-</ul>
-</li>
-<li><p><strong>任意读写</strong></p>
-<ul>
-<li><p>泄漏阶段：<code>%7$p</code>, <code>%9$p</code> 等确定栈上偏移。</p>
-</li>
-<li><p>写入阶段（任意地址写一个字节或两字节）：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">printf(&quot;%[num]c%[offset]$hhn&quot;, value, addr_ptr);</span><br></pre></td></tr></table></figure></div></li>
-</ul>
-</li>
-<li><p><strong>GOT 重写</strong></p>
-<ul>
-<li>利用 <code>%n</code> 将 GOT 中的函数入口（如 <code>exit@got</code>）重写为 <code>system@plt</code> → 执行 <code>system(&quot;/bin/sh&quot;)</code>。</li>
-</ul>
-</li>
-<li><p><strong>复杂 payload 拼接</strong></p>
-<ul>
-<li>分多次写不同字节，每次用精准的 <code>%c</code> 调整数值。</li>
-<li>常用工具：<code>fmtstr_payload</code>（pwntools）自动化生成写任意 64 位地址的字符串。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="3-堆漏洞（Heap-Exploitation）"><a href="#3-堆漏洞（Heap-Exploitation）" class="headerlink" title="3. 堆漏洞（Heap Exploitation）"></a>3. 堆漏洞（Heap Exploitation）</h3><ol>
-<li><strong>glibc malloc 内部结构</strong><ul>
-<li><strong>Fastbins</strong>：大小 ≤ 0x80，LIFO 快速分配。</li>
-<li><strong>Tcache</strong>（glibc 2.26+）：每个 size-class 最多缓存 7 个 chunk。</li>
-<li><strong>Unsorted Bin</strong>、<strong>Small Bin</strong>、<strong>Large Bin</strong>：更大或过期的 chunk 流转。</li>
-</ul>
-</li>
-<li><strong>常见利用手法</strong><ul>
-<li><strong>tcache poisoning</strong><ol>
-<li><code>free(A); free(B); free(A);</code> → A 双重入 tcache。</li>
-<li>修改 A 的 <code>fd</code> 指向目标地址 <code>X</code>。</li>
-<li><code>malloc(A); malloc(A); malloc(A);</code> → 第三次返回 <code>X</code>，可写任意位置。</li>
-</ol>
-</li>
-<li><strong>House of Force</strong><ul>
-<li>利用 <code>top chunk</code> 大小无限，调整 <code>brk</code> 到任意位置再 <code>malloc</code> 得到任意地址。</li>
-</ul>
-</li>
-<li><strong>House of Spirit</strong><ul>
-<li>在数据区伪造一个可用 chunk header，把它的地址当作 free chunk，<code>free(fake_ptr)</code> → 往任何地址写入到 tcache。</li>
-</ul>
-</li>
-<li><strong>其他 “House of …”</strong><ul>
-<li><strong>House of Lore</strong>：用 small bin 的伪造控制，写任意两字位置数据。</li>
-<li><strong>House of Orange</strong>：在 unsorted bin 用 io_list_all 伪造，触发 FILE vtable 利用。</li>
-<li><strong>House of Einherjar</strong>：结合 tcache, fastbin, unsorted bin 等混合利用。</li>
-</ul>
-</li>
-<li><strong>off-by-one &#x2F; overlap chunk</strong><ul>
-<li>越界 1 字节改 size 字段，伪装相邻 chunk 大小，造成合并后可写。</li>
-</ul>
-</li>
-<li><strong>double free</strong><ul>
-<li>未正确检测重复 free，导致 tcache 或 fastbin 污染。</li>
-</ul>
-</li>
-<li><strong>use-after-free</strong><ul>
-<li>free 后继续使用指针，配合覆盖 chunk header 改变下次分配。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="4-文件流-FILE-结构利用（-IO-FILE-Exploitation）"><a href="#4-文件流-FILE-结构利用（-IO-FILE-Exploitation）" class="headerlink" title="4. 文件流 &amp; FILE 结构利用（_IO_FILE Exploitation）"></a>4. 文件流 &amp; FILE 结构利用（_IO_FILE Exploitation）</h3><ul>
-<li><p><strong>核心</strong>：glibc 的 <code>FILE</code> 结构（_IO_FILE_plus）有 vtable 和函数指针，可伪造 <code>_IO_list_all</code> 链表或 vtable 指针，触发垂死攻击。</p>
-</li>
-<li><p><strong>典型流程</strong>：</p>
-<ol>
-<li><p>泄漏 libc 地址后，计算 <code>_IO_list_all</code>、<code>_IO_str_overflow</code>、<code>system</code> 等偏移。</p>
-</li>
-<li><p>在堆上伪造一个 <code>_IO_FILE</code> 结构：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">struct _IO_FILE fake = &#123;</span><br><span class="line">    ._flags = 0,</span><br><span class="line">    ._IO_read_ptr = 0,</span><br><span class="line">    ._IO_write_base = 1,           // non-zero</span><br><span class="line">    ._IO_write_ptr = 0,</span><br><span class="line">    .vtable_offset = 0,</span><br><span class="line">    ._IO_buf_base = (char*)system,</span><br><span class="line">    ._IO_buf_end = &quot;/bin/sh&quot;,</span><br><span class="line">    .vtable = _IO_str_jumps + 0x20 // 指向 _IO_overflow</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p>将这个 fake 文件结构地址写入 <code>_IO_list_all</code>。</p>
-</li>
-<li><p>调用 <code>exit()</code> 或 <code>abort()</code> 时，glibc 会遍历 <code>_IO_list_all</code>，执行 vtable 指针，跳转到 <code>system(&quot;/bin/sh&quot;)</code>。</p>
-</li>
-</ol>
-</li>
-</ul>
-<hr>
-<h3 id="5-信号-SROP（Sigreturn-Oriented-Programming）"><a href="#5-信号-SROP（Sigreturn-Oriented-Programming）" class="headerlink" title="5. 信号 &amp; SROP（Sigreturn-Oriented Programming）"></a>5. 信号 &amp; SROP（Sigreturn-Oriented Programming）</h3><ul>
-<li><p><strong>原理</strong>：利用 <code>sigreturn</code> 系统调用，恢复自定义的 ucontext 结构，从而修改寄存器（包括 <code>RIP</code>、<code>RSP</code>、<code>RAX</code>）并进行 syscalls。</p>
-</li>
-<li><p><strong>步骤</strong>：</p>
-<ol>
-<li><strong>准备</strong>：溢出控制 <code>RSP</code>，让栈指向你构造的 fake <code>sigframe</code>。</li>
-<li><strong>触发 sigreturn</strong>：构造 ROP，执行 <code>syscall; ret</code>，此时 <code>RAX=15</code>（__NR_sigreturn），CPU 会将栈上的 fake frame 恢复到上下文。</li>
-<li><strong>执行自定义 syscalls</strong>：在 fake frame 中设置 <code>RAX=59（execve）</code>，<code>RDI=ptr(&quot;/bin/sh&quot;)</code>，<code>RSI=0</code>，<code>RDX=0</code>，并让 <code>RIP</code> 指向 <code>syscall</code>，即可获得 shell。</li>
-</ol>
-</li>
-<li><p><strong>示例</strong>（pwntools 自动）：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">frame = SigreturnFrame()</span><br><span class="line">frame.rax = constants.SYS_execve</span><br><span class="line">frame.rdi = binsh_addr</span><br><span class="line">frame.rsi = 0</span><br><span class="line">frame.rdx = 0</span><br><span class="line">payload = b&quot;A&quot;*offset + p64(syscall_ret) + bytes(frame)</span><br></pre></td></tr></table></figure></div></li>
-</ul>
+			<p> <strong>在此之前先骂iscc，全国最垃圾的比赛，比不上🏀杯，运维垃圾，出题人水平低，甚至能被rce，客服沉默，题目抽象(wcnmiscc)</strong></p>
+<p>下面记录一下做区域赛的那道misc2-取证分析。</p>
+<p>百度网盘的东西下载下来之后，发现是veme内存镜像。用r-studio打开，在其中发现有一个hahaha.zip文件</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/wps1.jpg"
+                      alt="img"
+                >利用vol将该文件导出</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/wps2.jpg"
+                      alt="img"
+                > </p>
+<p>导出之后得到</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/wps3.jpg"
+                      alt="img"
+                > </p>
+<p>压缩包是加密的，pkf恢复密码<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/wps4.jpg"
+                      alt="img"
+                >。</p>
+<p>Hint1：rxms{ husqzqdq oubtqd }，解出来flag{ vigenere cipher }，但是这个flag不对，作为提示维吉尼亚解密，维吉尼亚解密需要密钥和密文，下载的附件doc里面改为zip在[Content_Types].xml里面发现密文 </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/wps5.jpg"
+                      alt="img"
+                >现在需要找密钥，给出的alphabet.txt文件里面有坐标。</p>
+<p>(2,10) (4,8) (2,4) (3,4) (11,13) (2,11) (1,1) (10,26) (5,6) (5,9)。并且提示杨辉三角有关</p>
+<p>坐标格式(列，行)，对应组合数公式m&#x3D;(列−1&#x2F;行−1)</p>
+<h2 id="计算组合数-m"><a href="#计算组合数-m" class="headerlink" title="计算组合数 $m$"></a>计算组合数 $m$</h2><p>对每个坐标 $(c, r)$，计算：</p>
+<table>
+<thead>
+<tr>
+<th>坐标 $(c,r)$</th>
+<th>计算</th>
+<th>结果 $m$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>(2,10)</td>
+<td>$\binom{10 - 1}{2 - 1} &#x3D; \binom{9}{1}$</td>
+<td>9</td>
+</tr>
+<tr>
+<td>(4,8)</td>
+<td>$\binom{8 - 1}{4 - 1} &#x3D; \binom{7}{3}$</td>
+<td>35</td>
+</tr>
+<tr>
+<td>(2,4)</td>
+<td>$\binom{4 - 1}{2 - 1} &#x3D; \binom{3}{1}$</td>
+<td>3</td>
+</tr>
+<tr>
+<td>(3,4)</td>
+<td>$\binom{4 - 1}{3 - 1} &#x3D; \binom{3}{2}$</td>
+<td>3</td>
+</tr>
+<tr>
+<td>(11,13)</td>
+<td>$\binom{13 - 1}{11 - 1} &#x3D; \binom{12}{10}$</td>
+<td>66</td>
+</tr>
+<tr>
+<td>(2,11)</td>
+<td>$\binom{11 - 1}{2 - 1} &#x3D; \binom{10}{1}$</td>
+<td>10</td>
+</tr>
+<tr>
+<td>(1,1)</td>
+<td>$\binom{1 - 1}{1 - 1} &#x3D; \binom{0}{0}$</td>
+<td>1</td>
+</tr>
+<tr>
+<td>(10,26)</td>
+<td>$\binom{26 - 1}{10 - 1} &#x3D; \binom{25}{9}$</td>
+<td>2 042 975</td>
+</tr>
+<tr>
+<td>(5,6)</td>
+<td>$\binom{6 - 1}{5 - 1} &#x3D; \binom{5}{4}$</td>
+<td>5</td>
+</tr>
+<tr>
+<td>(5,9)</td>
+<td>$\binom{9 - 1}{5 - 1} &#x3D; \binom{8}{4}$</td>
+<td>70</td>
+</tr>
+</tbody></table>
+<p>将十个坐标都算一遍得到</p>
+<p>9，35，3，3，66，10，1，2042975，5，70</p>
+<p>由于是维吉尼亚解密，想到维吉尼亚字母表</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/OIP.jpeg"
+                      alt="一文概览密码学发展史、基本原理与常见算法_腾讯新闻"
+                ></p>
+<p>长度有限，对26取模r&#x3D;m mod 26，如果r&#x3D;0 就改成 26</p>
+<table>
+<thead>
+<tr>
+<th>原始 $m$</th>
+<th>$m \bmod 26$</th>
+<th>结果 $r$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>9</td>
+<td>9</td>
+<td>9</td>
+</tr>
+<tr>
+<td>35</td>
+<td>9</td>
+<td>9</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>66</td>
+<td>14</td>
+<td>14</td>
+</tr>
+<tr>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2042975</td>
+<td>25</td>
+<td>25</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>70</td>
+<td>18</td>
+<td>18</td>
+</tr>
+</tbody></table>
+<p>得到</p>
+<p>9，9，3，3，14，10，1，25，5，18</p>
+<p>对应I I C C N J A Y E R，也就是维吉尼亚密钥，利用该密钥对密文解密得到答案</p>
+<p>然后就</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/edd14ebad0d1cdad165db0bb993d1d6.jpg"
+                      alt="edd14ebad0d1cdad165db0bb993d1d6"
+                ></p>
+<p> <strong>在最后再骂iscc，全国最垃圾的比赛，比不上🏀杯，运维垃圾，出题人水平低，甚至能被rce，客服沉默，题目抽象(wcnmiscc)</strong></p>
 
 		</div>
 
@@ -611,18 +639,18 @@
 		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
 			<div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> pwn漏洞利用手法汇总</li>
+        <li><strong>Title:</strong> first blood</li>
         <li><strong>Author:</strong> luyanpei</li>
         <li><strong>Created at
-                :</strong> 2025-05-09 18:07:05</li>
+                :</strong> 2025-05-20 10:30:05</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-05-09 18:49:36
+                    :</strong> 2025-05-20 10:58:31
             </li>
         
         <li>
-            <strong>Link:</strong> https://redefine.ohevan.com/2025/05/09/漏洞利用手法汇总/
+            <strong>Link:</strong> https://redefine.ohevan.com/2025/05/20/一血的pycc/
         </li>
         <li>
             <strong>
@@ -644,7 +672,7 @@
 		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
 			
 			<li class="tag-item mx-0.5">
-				<a href="/tags/%E6%80%BB%E7%BB%93/">#总结</a>&nbsp;
+				<a href="/tags/wp/">#wp</a>&nbsp;
 			</li>
 			
 		</ul>
@@ -655,23 +683,11 @@
 		
 		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
 			
-			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-				<a class="prev" rel="prev" href="/2025/05/09/AFLLibFuzzer%20%E6%A8%A1%E7%B3%8A%E6%B5%8B%E8%AF%95%E6%A6%82%E5%BF%B5%E5%88%9D%E6%8E%A2/">
-					<span class="left arrow-icon flex justify-center items-center">
-						<i class="fa-solid fa-chevron-left"></i>
-					</span>
-					<span class="title flex justify-center items-center">
-						<span class="post-nav-title-item">AFLLibFuzzer 模糊测试概念初探</span>
-						<span class="post-nav-item">Prev posts</span>
-					</span>
-				</a>
-			</div>
-			
 			
 			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-				<a class="next" rel="next" href="/2025/05/09/vmpwn/">
+				<a class="next" rel="next" href="/2025/05/11/%E5%BE%A1%E7%BD%91%E6%9D%AF%E7%9C%81%E8%B5%9Bwp/">
 					<span class="title flex justify-center items-center">
-						<span class="post-nav-title-item">vmpwn</span>
+						<span class="post-nav-title-item">御网杯省赛wp</span>
 						<span class="post-nav-item">Next posts</span>
 					</span>
 					<span class="right arrow-icon flex justify-center items-center">
@@ -692,8 +708,8 @@
 		<div class="post-toc-wrap">
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
-		<div class="page-title">pwn漏洞利用手法汇总</div>
-		<ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%A0%88%E6%BA%A2%E5%87%BA%EF%BC%88Stack-Overflow%EF%BC%89"><span class="nav-text">1. 栈溢出（Stack Overflow）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%88Format-String%EF%BC%89"><span class="nav-text">2. 格式化字符串（Format String）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%A0%86%E6%BC%8F%E6%B4%9E%EF%BC%88Heap-Exploitation%EF%BC%89"><span class="nav-text">3. 堆漏洞（Heap Exploitation）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%96%87%E4%BB%B6%E6%B5%81-FILE-%E7%BB%93%E6%9E%84%E5%88%A9%E7%94%A8%EF%BC%88-IO-FILE-Exploitation%EF%BC%89"><span class="nav-text">4. 文件流 &amp; FILE 结构利用（_IO_FILE Exploitation）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E4%BF%A1%E5%8F%B7-SROP%EF%BC%88Sigreturn-Oriented-Programming%EF%BC%89"><span class="nav-text">5. 信号 &amp; SROP（Sigreturn-Oriented Programming）</span></a></li></ol>
+		<div class="page-title">first blood</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E7%BB%84%E5%90%88%E6%95%B0-m"><span class="nav-text">计算组合数 $m$</span></a></li></ol>
 
 	</div>
 </div>
