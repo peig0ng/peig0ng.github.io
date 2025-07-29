@@ -13,7 +13,7 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://peig0ng.github.io/archives/"/>
+    <link rel="canonical" href="https://peig0ng.github.io/posts/21355.html"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
@@ -22,14 +22,17 @@
     
         
         <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://peig0ng.github.io/archives/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于glibc-all-in-one加载符号表利用patchelf自动切换libc">
+<meta property="og:url" content="https://peig0ng.github.io/posts/21355.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://peig0ng.github.io/images/redefine-og.webp">
+<meta property="article:published_time" content="2025-04-15T05:07:05.000Z">
+<meta property="article:modified_time" content="2025-05-28T04:16:22.198Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="tools">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://peig0ng.github.io/images/redefine-og.webp">
     
@@ -43,7 +46,7 @@
     
     <title>
         
-            Archive | lpp_blog
+            基于glibc-all-in-one加载符号表利用patchelf自动切换libc | lpp_blog
         
     </title>
 
@@ -174,7 +177,7 @@
 
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="active"
+                                <a class=""
                                    href="/archives"
                                         >
                                     <i class="fa-regular fa-archive fa-fw"></i>
@@ -269,7 +272,7 @@
 
                     <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
                         
-                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
                            href="/archives"
                         >
                             <span>
@@ -361,236 +364,277 @@
 			
 
 			<div class="main-content">
-				<div class="archive-container shadow-none hover:shadow-none sm:shadow-redefine sm:hover:shadow-redefine-hover">
-	
-<div class="archive-list-container">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">基于glibc-all-in-one加载符号表利用patchelf自动切换libc</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/lpp.jpg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">luyanpei</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-04-15 13:07:05</span>
+        <span class="mobile">2025-04-15 13:07:05</span>
+        <span class="hover-info">Created</span>
+    </span>
     
-        <section class="archive-item mb-spacing-unit last:mb-0">
-            <div class="archive-item-header flex flex-row items-center mb-2">
-                <span class="archive-year font-semibold text-3xl mr-2">2025</span>
-                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">20</span>
-            </div>
-            
-            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-05-28 12:16:22</span>
+            <span class="mobile">2025-05-28 12:16:22</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
                 
-                    
-                    
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-29'>
-                    
-                    <a href="/posts/36779.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">NepCTF wp</span>
-                    </a>
-                    
                 
-                    
-                    
-                    <a href="/posts/37443.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">web从零开始day4</span>
-                    </a>
-                    
-                
-                    
                     
                         
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-18'>
+                        <li>
+                            <a href="/categories/tools/">tools</a>&nbsp;
+                        </li>
                     
-                    <a href="/posts/21725.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">L3HCTF pwn</span>
-                    </a>
                     
                 
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-09'>
-                    
-                    <a href="/posts/20483.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">web从零开始day3</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-04'>
-                    
-                    <a href="/posts/20138.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">红日靶场4</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-27'>
-                    
-                    <a href="/posts/50190.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">红日靶场初探(课程大作业)</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-25'>
-                    
-                    <a href="/posts/19588.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">house of force</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-20'>
-                    
-                    <a href="/posts/29379.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">ISCC的first blood(取证分析)</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-11'>
-                    
-                    <a href="/posts/48069.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">御网杯省赛wp</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-09'>
-                    
-                    <a href="/posts/26472.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">AFLLibFuzzer 模糊测试概念初探</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/posts/53491.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">pwn漏洞利用手法汇总</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/posts/41075.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">vmpwn</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-27'>
-                    
-                    <a href="/posts/45738.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">2025蓝桥网络安全 wp</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-24'>
-                    
-                    <a href="/posts/37058.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">web从零开始day2</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-23'>
-                    
-                    <a href="/posts/38602.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">web从零开始day1</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-20'>
-                    
-                    <a href="/posts/27579.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">2025数字中国决赛app wp</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-16'>
-                    
-                    <a href="/posts/28942.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">ssti</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/posts/38602.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">TGCTF_pwn方向</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-15'>
-                    
-                    <a href="/posts/15591.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">2024国赛_长城杯</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/posts/21355.html" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">基于glibc-all-in-one加载符号表利用patchelf自动切换libc</span>
-                    </a>
-                    
-                
-                </li> <!-- Ensure the last item is properly closed -->
             </ul>
-        </section>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/tools/">tools</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>754 Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>3 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
     
 </div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="super-libc-🔧"><a href="#super-libc-🔧" class="headerlink" title="super_libc 🔧"></a>super_libc 🔧</h1><p>在CTF Pwn挑战中，GLIBC版本的选择与切换常常对漏洞利用与调试起到至关重要的作用。super_libc 是一个用于自动化GLIBC切换的脚本工具，支持交互式版本选择、路径自动检测，并能够在调试过程中自动更新符号表，极大地简化了调试工作流。本文将介绍如何使用 super_libc，并提供详细的安装和使用步骤</p>
+<h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/peig0ng/super_libc</span><br></pre></td></tr></table></figure></div>
+
+
+<div class="code-container" data-rel="Tex"><figure class="iseeu highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&gt; 一款用于CTF Pwn挑战的自动化GLIBC切换脚本，支持交互式版本选择和路径自动检测</span><br><span class="line">以及通过操作glibc-all-in-one每次调试自带符号表，详细操作见md文件</span><br><span class="line"></span><br><span class="line"><span class="params">##</span> 功能特性 ✨</span><br><span class="line"></span><br><span class="line">- 🚀 自动检测glibc-all-in-one安装路径</span><br><span class="line">- 📂 交互式GLIBC版本选择菜单</span><br><span class="line">- ✅ ELF文件验证</span><br><span class="line">- 🔍 支持环境变量指定路径</span><br><span class="line">- 💻 兼容各版本Ubuntu系统</span><br><span class="line">- 🛠️ 自动依赖检查与错误提示</span><br><span class="line"></span><br><span class="line"><span class="params">##</span> 安装指南 📦</span><br><span class="line"></span><br><span class="line"><span class="params">###</span> 前置要求</span><br><span class="line">- Ubuntu系统（推荐20.04/22.04）</span><br><span class="line">- `patchelf`工具</span><br><span class="line">- glibc-all-in-one</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p>首先安装glibc-all-in-one，patchelf</p>
+<p>glibc-all-in-one</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/matrix1001/glibc-all-in-one</span><br><span class="line"><span class="built_in">cd</span> ~/glibc-all-in-one</span><br><span class="line"><span class="built_in">sudo</span> python3 update_list</span><br><span class="line"><span class="built_in">cd</span> ..</span><br></pre></td></tr></table></figure></div>
+
+<p>在glibc-all-in-one中</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/</span><br><span class="line"><span class="built_in">cd</span> glibc-all-in-one</span><br><span class="line"><span class="built_in">chmod</span> +x update-list</span><br><span class="line"><span class="built_in">cat</span> list</span><br><span class="line"><span class="built_in">sudo</span> ./download &lt;需要的libc版本&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>patchelf</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/</span><br><span class="line"><span class="built_in">sudo</span> apt install patchelf</span><br></pre></td></tr></table></figure></div>
+
+<p>super_libc</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/peig0ng/super_libc.git</span><br></pre></td></tr></table></figure></div>
+<h2 id="使用方法-🛠️"><a href="#使用方法-🛠️" class="headerlink" title="使用方法 🛠️"></a>使用方法 🛠️</h2><h1 id="符号表问题"><a href="#符号表问题" class="headerlink" title="符号表问题"></a>符号表问题</h1><p>gdb调试碰到的符号表问题</p>
+<p>进入~&#x2F;glibc-all-in-one&#x2F;libs&#x2F;目录</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250403162311117.png"
+                      alt="image-20250403162311117"
+                >进去需要的libc版本目录下(以2.23为例)，显示隐藏文件.debug,这里面是符号表信息</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250403162358182.png"
+                      alt="image-20250403162358182"
+                >进入.debug&#x2F;lib&#x2F;x86_64-linuxgnu&#x2F;</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250415134500300.png"
+                      alt="image-20250415134500300"
+                ></p>
+<p>找到libc-2.23.so文件，复制到.debug根目录下</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250415134510161.png"
+                      alt="image-20250415134510161"
+                ></p>
+<p>就可以不用gdb的命令情况下，super_libc更改好文件libc后, pwndbg打开文件，直接就能加载好符号表。</p>
+<p>2.23.2.27都跟上面一样</p>
+<p>2.31版本符号表改动，在下面的文件夹里面<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250415134535782.png"
+                      alt="image-20250415134535782"
+                ></p>
+<h3 id="2-34，2-35之后，将所有的文件复制到debug根目录就行，符号表太多了"><a href="#2-34，2-35之后，将所有的文件复制到debug根目录就行，符号表太多了" class="headerlink" title="2.34，2.35之后，将所有的文件复制到debug根目录就行，符号表太多了"></a>2.34，2.35之后，将所有的文件复制到debug根目录就行，符号表太多了</h3><h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./super_libc.sh &lt;binary&gt;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="选项说明"><a href="#选项说明" class="headerlink" title="选项说明"></a>选项说明</h3><ul>
+<li><p>设置环境变量（可选）：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export GLIBC_ALL_IN_ONE_PATH=/path/to/your/glibc-all-in-one</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<p>可以自行添加环境变量以便全局运行</p>
+<h3 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h3><ol>
+<li>运行脚本指定目标ELF文件</li>
+<li>选择glibc版本（自动列出可用版本）</li>
+<li>自动完成修补操作</li>
+<li>验证结果</li>
+</ol>
+<h2 id="使用示例-📝"><a href="#使用示例-📝" class="headerlink" title="使用示例 📝"></a>使用示例 📝</h2><div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ ./super_libc.sh ./magicheap</span><br><span class="line"></span><br><span class="line">Available glibc versions:</span><br><span class="line"> 0) 2.23-0ubuntu11.3_amd64</span><br><span class="line"> 1) 2.27-3ubuntu1.6_amd64</span><br><span class="line"> 2) 2.31-0ubuntu9.9_amd64</span><br><span class="line"></span><br><span class="line">Select version (0-2): 0</span><br><span class="line"></span><br><span class="line">Patching with:</span><br><span class="line">Interpreter: /home/user/glibc-all-in-one/libs/2.23-0ubuntu11.3_amd64/ld-2.23.so</span><br><span class="line">RPATH:      /home/user/glibc-all-in-one/libs/2.23-0ubuntu11.3_amd64/</span><br><span class="line"></span><br><span class="line">Patch successful!</span><br><span class="line">Verify with:</span><br><span class="line">  file ./magicheap</span><br><span class="line">  ldd ./magicheap</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="注意事项-⚠️"><a href="#注意事项-⚠️" class="headerlink" title="注意事项 ⚠️"></a>注意事项 ⚠️</h2><ol>
+<li><p>确保目标ELF文件具有可写权限</p>
+</li>
+<li><p>glibc-all-in-one需要预先下载完整版本</p>
+</li>
+<li><p>如果遇到路径问题，可手动指定：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GLIBC_ALL_IN_ONE_PATH=/custom/path ./glibc-patcher.sh &lt;ELF&gt;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>修补后建议使用<code>ldd</code>命令验证结果</p>
+</li>
+</ol>
+<hr>
+<p>⭐ 如果觉得本项目有帮助，欢迎Star支持！</p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 基于glibc-all-in-one加载符号表利用patchelf自动切换libc</li>
+        <li><strong>Author:</strong> luyanpei</li>
+        <li><strong>Created at
+                :</strong> 2025-04-15 13:07:05</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-05-28 12:16:22
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/posts/21355.html
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                All Rights Reserved &#169; luyanpei
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/tools/">#tools</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/posts/28942.html">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">ssti</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/posts/15591.html">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">2024国赛_长城杯</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">基于glibc-all-in-one加载符号表利用patchelf自动切换libc</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#super-libc-%F0%9F%94%A7"><span class="nav-text">super_libc 🔧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E5%9C%B0%E5%9D%80"><span class="nav-text">项目地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95-%F0%9F%9B%A0%EF%B8%8F"><span class="nav-text">使用方法 🛠️</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%A6%E5%8F%B7%E8%A1%A8%E9%97%AE%E9%A2%98"><span class="nav-text">符号表问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-34%EF%BC%8C2-35%E4%B9%8B%E5%90%8E%EF%BC%8C%E5%B0%86%E6%89%80%E6%9C%89%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6%E5%88%B0debug%E6%A0%B9%E7%9B%AE%E5%BD%95%E5%B0%B1%E8%A1%8C%EF%BC%8C%E7%AC%A6%E5%8F%B7%E8%A1%A8%E5%A4%AA%E5%A4%9A%E4%BA%86"><span class="nav-text">2.34，2.35之后，将所有的文件复制到debug根目录就行，符号表太多了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4"><span class="nav-text">基本命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E9%A1%B9%E8%AF%B4%E6%98%8E"><span class="nav-text">选项说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-text">操作流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B-%F0%9F%93%9D"><span class="nav-text">使用示例 📝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9-%E2%9A%A0%EF%B8%8F"><span class="nav-text">注意事项 ⚠️</span></a></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
 </div>
 			</div>
 
@@ -672,6 +716,22 @@
 		</div>
 	</div>
 
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+	</ul>
+</div>
+	</div>
 	
 
 	<div class="right-side-tools-container">
@@ -775,6 +835,7 @@
         containers: ["#swup"],
     });
 </script>
+
 
 
 

