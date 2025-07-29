@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://example.com/2025/07/19/nssctf-web%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bday4/</loc>
+    <lastmod>2025-07-29</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2025/07/25/index/</loc>
+    <lastmod>2025-07-29</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2025/07/29/NepCTF-wp%20by%20lpp/</loc>
+    <lastmod>2025-07-29</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2025/07/18/L3HCTF%20pwn%E6%96%B9%E5%90%91/</loc>
+    <lastmod>2025-07-29</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2025/04/16/ssti/</loc>
+    <lastmod>2025-07-10</lastmod>
+  </url>
+  <url>
     <loc>http://example.com/2025/07/09/nssctf-web%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bday3/</loc>
     <lastmod>2025-07-10</lastmod>
   </url>
