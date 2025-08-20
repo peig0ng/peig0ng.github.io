@@ -445,6 +445,83 @@
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
+                        <a href="/posts/53491.html">
+                            pwn漏洞利用手法汇总
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            1. 栈溢出（Stack Overflow）
+简单的 ret 控制流
+
+利用函数 gets()&#x2F;strcpy() 等读入超过缓冲区大小的数据，覆盖保存的 RIP。
+
+Payload 结构：
+1[ padding to saved RBP ] [ saved RBP overwrite ] [ new RIP ]
+
+示例：
+123456void vuln() &#123;    ch...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Fri May 09 2025 18:07:05 GMT+0800">
+                
+                    2025-05-09
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E6%80%BB%E7%BB%93/">总结</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%80%BB%E7%BB%93/">总结</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/posts/53491.html">Read more<span class="seo-reader-text">pwn漏洞利用手法汇总</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
                         <a href="/posts/41075.html">
                             vmpwn
                         </a>
@@ -885,74 +962,6 @@ android.permission.REQUEST_IGNORE_BATTERY_...
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
-                        <a href="/posts/28942.html">
-                            ssti
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Apr 16 2025 00:07:05 GMT+0800">
-                
-                    2025-04-16
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/%E7%9F%A5%E8%AF%86/">知识</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E7%9F%A5%E8%AF%86/">知识</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/posts/28942.html">Read more<span class="seo-reader-text">ssti</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
                         <a href="/posts/21355.html">
                             基于glibc-all-in-one加载符号表利用patchelf自动切换libc
                         </a>
@@ -1226,7 +1235,7 @@ Finish &amp; Second Blood
                     </span>
                     
                         <span>
-                            35.1k words in total
+                            37.3k words in total
                         </span>
                     
                 </p>
